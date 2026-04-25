@@ -1649,8 +1649,8 @@
         composer.addPass(new RenderPass(scene, camera));
 
         const bloomPass = new UnrealBloomPass(
-            new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2),
-            1.0,
+            new THREE.Vector2(window.innerWidth / (isMobile ? 4 : 2), window.innerHeight / (isMobile ? 4 : 2)),
+            isMobile ? 0.6 : 1.0,
             0.8,
             0.1
         );
@@ -1684,7 +1684,8 @@
     }
 
     function createMainParticles() {
-        const particleCount = 200;
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 300 : 2000;
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
         const baseColor = new THREE.Color(0x001f3f);
@@ -1965,7 +1966,8 @@
         });
 
 
-        const targetCount = 3500;
+        const isMobile = window.innerWidth < 768;
+        const targetCount = isMobile ? 1200 : 3500;
         const sampledShape = [];
         const step = Math.max(1, Math.floor(allPoints.length / targetCount));
         for (let i = 0; i < allPoints.length; i += step) {
