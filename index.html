@@ -17,8 +17,15 @@
         font-style: normal;
     }
 
+    html,
+    body {
+        height: 100dvh;
+
+        overflow: hidden;
+
+    }
+
     html {
-        scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
         scrollbar-width: none;
     }
@@ -26,8 +33,6 @@
     body {
         font-family: 'RainyHearts', cursive;
         background: linear-gradient(to bottom, #001a33 0%, #003366 50%, #004080 100%);
-        overflow-x: hidden;
-        overflow-y: auto;
         margin: 0;
         padding: 0;
         user-select: none;
@@ -40,6 +45,9 @@
         scroll-snap-align: start;
         scroll-snap-stop: always;
         min-height: 100vh;
+
+        min-height: 100svh;
+
     }
 
     #bg-canvas {
@@ -54,6 +62,12 @@
     .content-container {
         position: relative;
         z-index: 1;
+        height: 100dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
     }
 
     h1,
@@ -372,7 +386,13 @@
 
 
     .floating-nav-container {
-        display: none !important;
+        position: fixed;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .floating-nav-container.visible {
@@ -464,8 +484,10 @@
 
 
     @media (max-width: 768px) {
-        .floating-nav-container {
-            display: none;
+
+        .floating-nav-container,
+        .bottom-floating-nav {
+            display: none !important;
         }
     }
 
@@ -490,6 +512,20 @@
         display: flex;
         flex-direction: row-reverse;
         position: relative;
+    }
+
+    .inline-nav-box .fab-icon-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .inline-nav-box .fab-icon-button svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .inline-nav-box .nav-label {
+        font-size: 1rem;
     }
 
 
@@ -951,26 +987,26 @@
     </div>
 </div>
 
-<div class="content-container w-full" style="min-height: 300vh;">
-    <div class="snap-section h-screen flex items-center justify-center p-4" style="
+<div class="content-container w-full" id="scroll-container">
+    <div class="snap-section h-screen flex items-center justify-center p-4" id="section-home" style="
     margin-left: 0px;
     margin-right: 0px;
 ">
         <div class="text-center max-w-3xl mx-auto fade-in" style="margin: 0 0 0 0;">
-            <h1 class="text-lg md:text-7xl lg:text-8xl font-black text-white text-shadow-gold"
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white text-shadow-gold"
                 style="animation: float-1 3s ease-in-out infinite;">
                 Hello World,
             </h1>
-            <p class="mt-4 text-lg md:text-3xl lg:text-3xl text-gray-300 max-w-2xl mx-auto"
+            <p class="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-gray-300 max-w-2xl mx-auto"
                 style="animation: float-2 4s ease-in-out infinite;">
                 I'm Randi Hasan Saksono
             </p>
             <br>
-            <div class="w-28 h-1 bg-gradient-to-r from-blue-500 to-blue-400 mx-auto my-4 mb-0 opacity-50"
+            <div class="w-40 sm:w-48 md:w-64 h-1 md:h-1.5 bg-gradient-to-r from-blue-500 to-blue-400 mx-auto my-4 mb-0 opacity-50"
                 style="animation: float-4 5s ease-in-out infinite;">
             </div>
 
-            <p class="text-lg md:text-3xl lg:text-3xl text-gray-300"
+            <p class="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-gray-300"
                 style="animation: float-4 5s ease-in-out infinite;">
                 Software Engineer
             </p>
@@ -978,7 +1014,7 @@
                 <a href="https://github.com/BlackUppsss" target="_blank"
                     class="text-gray-300 hover:text-white transition-colors"
                     style="display: inline-block; animation: float-5 4.5s ease-in-out infinite;">
-                    <svg class="w-9 h-9" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-7 h-7 md:w-9 md:h-9" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                         shape-rendering="crispEdges">
                         <rect x="4" y="2" width="1" height="7" fill="currentColor" />
                         <rect x="11" y="2" width="1" height="7" fill="currentColor" />
@@ -996,7 +1032,7 @@
                 <a href="https://discord.com/users/696509693627072614" target="_blank"
                     class="text-gray-300 hover:text-white transition-colors"
                     style="display: inline-block; animation: float-6 3.8s ease-in-out infinite;">
-                    <svg class="w-10 h-10" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                         shape-rendering="crispEdges">
                         <rect x="4" y="4" width="2" height="4" fill="currentColor" />
                         <rect x="7" y="4" width="2" height="9" fill="currentColor" />
@@ -1019,7 +1055,7 @@
                 </a>
                 <a href="mailto:randihasan2017@gmail.com" class="text-gray-300 hover:text-white transition-colors"
                     style="display: inline-block; animation: float-7 3.2s ease-in-out infinite;">
-                    <svg class="w-11 h-11" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-9 h-9 md:w-11 md:h-11" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                         shape-rendering="crispEdges">
                         <rect x="3" y="4" width="11" height="1" fill="currentColor" />
                         <rect x="2" y="5" width="1" height="7" fill="currentColor" />
@@ -1038,7 +1074,7 @@
                 <a href="https://wa.me/089671104005" target="_blank"
                     class="text-gray-300 hover:text-white transition-colors"
                     style="display: inline-block; animation: float-8 4.2s ease-in-out infinite;">
-                    <svg class="w-8 h-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                         shape-rendering="crispEdges">
                         <rect x="4" y="1" width="8" height="3" fill="currentColor" />
                         <rect x="2" y="2" width="2" height="12" fill="currentColor" />
@@ -1066,7 +1102,7 @@
     </div>
 
 
-    <div class="snap-section min-h-screen flex items-center justify-center p-8">
+    <div class="snap-section min-h-screen flex items-center justify-center p-8" id="section-about">
         <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-8"
                 style="animation: float-1 3s ease-in-out infinite;">
@@ -1124,8 +1160,9 @@
                 <div class="hidden md:block w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
 
 
-                <div class="w-full md:w-6/12 p-8 flex flex-col justify-between">
-                    <h3 class="text-2xl md:text-4xl font-bold text-white text-center mb-6">Technical Skills</h3>
+                <div class="hidden md:flex w-full md:w-6/12 p-8 flex-col justify-between">
+                    <h3 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-6"
+                        style="animation: float-1 3s ease-in-out infinite;">Technical Skills</h3>
 
 
                     <div class="flex flex-wrap justify-center gap-3" id="skills-container">
@@ -1199,9 +1236,10 @@
 
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
                             data-category="web">
-                            <img src="Assets/SVG/SCSS.svg" alt="SCSS" class="w-10 h-10">
-                            <span class="font-semibold text-white text-lg md:text-xl">SCSS</span>
+                            <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
                         </div>
+
+
 
 
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
@@ -1250,6 +1288,11 @@
                             data-category="mobile">
                             <img src="Assets/SVG/IsarDB.png" alt="Isar" class="w-10 h-10">
                             <span class="font-semibold text-white text-lg md:text-xl">Isar</span>
+                        </div>
+
+                        <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                            data-category="mobile">
+                            <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
                         </div>
 
 
@@ -1320,10 +1363,15 @@
                             <img src="Assets/SVG/Git.svg" alt="Git" class="w-10 h-10">
                             <span class="font-semibold text-white text-lg md:text-xl">Git</span>
                         </div>
+
+                        <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                            data-category="else">
+                            <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
+                        </div>
                     </div>
-                    <div class="inline-nav-box mt-8 flex flex-row-reverse justify-center gap-2 md:gap-3"
+                    <div class="inline-nav-box mt-8 flex flex-row-reverse justify-center gap-1 md:gap-2"
                         style="top: 10px;">
-                        <div class="fab-highlight" id="inline-fab-highlight"></div>
+                        <div class="fab-highlight"></div>
                         <div class="nav-button-wrapper">
                             <div class="fab-icon-button active" data-index="0">
                                 <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
@@ -1463,11 +1511,361 @@
     </div>
 
 
-    <div class="snap-section min-h-screen flex items-center justify-center p-8">
+
+
+    <div class="snap-section min-h-screen flex md:hidden items-center justify-center p-8" id="section-skills-mobile">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-8"
+                style="animation: float-1 3s ease-in-out infinite;">
+                Technical Skills
+            </h2>
+            <div class="pixel-corners bg-white/5 backdrop-blur-sm px-4 pt-12 pb-6 sm:px-8 sm:pt-14 sm:pb-8 flex flex-col justify-between"
+                style="animation: float-3 3.5s ease-in-out infinite;">
+                <div class="flex flex-wrap justify-center gap-3 overflow-y-auto h-[320px] content-start"
+                    id="skills-container-mobile"
+                    style="align-content: flex-start; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent;">
+
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/MongoDB.svg" alt="MongoDB" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">MongoDB</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/ExpressJs.svg" alt="Express" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Express.js</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/React.svg" alt="React" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">React</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/NodeJs.svg" alt="NodeJs" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Node.js</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web" style="min-width: 170px;">
+                        <img src="Assets/SVG/Typescript.svg" alt="Typescript" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">TypeScript</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web" style="min-width: 170px;">
+                        <img src="Assets/SVG/Javascript.svg" alt="Javascript" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Javascript</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/PostgreSQL.svg" alt="PostgreSQL" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">PostgreSQL</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/MySQL.svg" alt="MySQL" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">MySQL</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/Socket IO.svg" alt="Socket IO" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Socket IO</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/HTML.svg" alt="HTML" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">HTML</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <img src="Assets/SVG/CSS.svg" alt="CSS" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">CSS</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
+                        data-category="web">
+                        <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
+                    </div>
+
+
+
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/React.svg" alt="React Native" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">React Native</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/Typescript.svg" alt="Typescript" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Typescript</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/Javascript.svg" alt="Javascript" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Javascript</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/Flutter.svg" alt="Flutter" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Flutter</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/Firebase.svg" alt="Firebase" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Firebase</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/SQLite.svg" alt="SQLite" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">SQLite</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/Dart.svg" alt="Dart" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Dart</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <img src="Assets/SVG/IsarDB.png" alt="Isar" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Isar</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="mobile">
+                        <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
+                    </div>
+
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/Rust.svg" alt="Rust" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Rust</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/Tauri.svg" alt="Tauri" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Tauri</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/DotNet.svg" alt=".NET" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">.NET</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/CSharp.svg" alt="C#.svg" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">C#</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/Java.svg" alt="Java" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Java</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="desktop">
+                        <img src="Assets/SVG/SQLite.svg" alt="SQLite" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">SQLite</span>
+                    </div>
+
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="game">
+                        <img src="Assets/SVG/Unity.svg" alt="Unity" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Unity</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="game">
+                        <img src="Assets/SVG/CSharp.svg" alt="C#" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">C#</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="game">
+                        <img src="Assets/SVG/Godot.svg" alt="Godot" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Godot</span>
+                    </div>
+
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="else">
+                        <img src="Assets/SVG/Postman.svg" alt="Postman" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Postman</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="else">
+                        <img src="Assets/SVG/Git.svg" alt="Git" class="w-10 h-10">
+                        <span class="font-semibold text-white text-lg md:text-xl">Git</span>
+                    </div>
+
+                    <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
+                        data-category="else">
+                        <span class="font-bold text-white/80 text-lg md:text-xl px-2">+more</span>
+                    </div>
+                </div>
+                <div class="inline-nav-box mt-8 flex flex-row-reverse justify-center gap-1 md:gap-2" style="top: 10px;">
+                    <div class="fab-highlight"></div>
+                    <div class="nav-button-wrapper">
+                        <div class="fab-icon-button active" data-index="0">
+                            <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="crispEdges">
+                                <rect x="3" y="1" width="10" height="1" />
+                                <rect x="2" y="2" width="6" height="1" />
+                                <rect x="12" y="2" width="2" height="1" />
+                                <rect x="1" y="3" width="5" height="1" />
+                                <rect x="13" y="3" width="2" height="1" />
+                                <rect x="1" y="4" width="2" height="2" />
+                                <rect x="9" y="4" width="3" height="1" />
+                                <rect x="14" y="4" width="1" height="9" />
+                                <rect x="10" y="5" width="4" height="1" />
+                                <rect x="1" y="6" width="1" height="7" />
+                                <rect x="4" y="6" width="3" height="5" />
+                                <rect x="11" y="6" width="3" height="3" />
+                                <rect x="3" y="7" width="1" height="3" />
+                                <rect x="7" y="7" width="2" height="4" />
+                                <rect x="12" y="9" width="2" height="3" />
+                                <rect x="5" y="11" width="3" height="1" />
+                                <rect x="2" y="12" width="1" height="2" />
+                                <rect x="5" y="12" width="2" height="1" />
+                                <rect x="9" y="12" width="2" height="3" />
+                                <rect x="13" y="12" width="1" height="2" />
+                                <rect x="3" y="13" width="1" height="2" />
+                                <rect x="8" y="13" width="1" height="2" />
+                                <rect x="11" y="13" width="2" height="2" />
+                                <rect x="4" y="14" width="4" height="1" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Web</span>
+                    </div>
+                    <div class="nav-button-wrapper">
+                        <div class="fab-icon-button" data-index="1">
+                            <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="crispEdges">
+                                <rect x="5" y="0" width="7" height="1" />
+                                <rect x="4" y="1" width="1" height="13" />
+                                <rect x="5" y="1" width="2" height="11" opacity="0.098039" />
+                                <rect x="7" y="1" width="3" height="1" />
+                                <rect x="10" y="1" width="2" height="11" opacity="0.098039" />
+                                <rect x="12" y="1" width="1" height="13" />
+                                <rect x="7" y="2" width="3" height="10" opacity="0.098039" />
+                                <rect x="5" y="12" width="1" height="1" opacity="0.098039" />
+                                <rect x="6" y="12" width="5" height="3" />
+                                <rect x="11" y="12" width="1" height="1" opacity="0.098039" />
+                                <rect x="5" y="13" width="1" height="2" />
+                                <rect x="11" y="13" width="1" height="2" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Mobile</span>
+                    </div>
+
+
+                    <div class="nav-button-wrapper">
+                        <div class="fab-icon-button" data-index="2">
+                            <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="crispEdges">
+                                <rect x="2" y="3" width="12" height="1" />
+                                <rect x="1" y="4" width="2" height="1" />
+                                <rect x="3" y="4" width="10" height="7" opacity="0.098039" />
+                                <rect x="13" y="4" width="2" height="1" />
+                                <rect x="1" y="5" width="1" height="6" />
+                                <rect x="2" y="5" width="1" height="5" opacity="0.098039" />
+                                <rect x="13" y="5" width="1" height="5" opacity="0.098039" />
+                                <rect x="14" y="5" width="1" height="6" />
+                                <rect x="2" y="10" width="1" height="2" />
+                                <rect x="13" y="10" width="1" height="2" />
+                                <rect x="3" y="11" width="10" height="1" />
+                                <rect x="4" y="12" width="8" height="2" />
+                                <rect x="3" y="13" width="1" height="2" />
+                                <rect x="12" y="13" width="1" height="2" />
+                                <rect x="2" y="14" width="1" height="1" />
+                                <rect x="13" y="14" width="1" height="1" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Desktop</span>
+                    </div>
+                    <div class="nav-button-wrapper">
+                        <div class="fab-icon-button" data-index="3">
+                            <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="crispEdges">
+                                <rect x="4" y="3" width="3" height="2" />
+                                <rect x="9" y="3" width="3" height="2" />
+                                <rect x="3" y="4" width="1" height="10" />
+                                <rect x="7" y="4" width="2" height="8" />
+                                <rect x="12" y="4" width="1" height="10" />
+                                <rect x="2" y="5" width="1" height="9" />
+                                <rect x="4" y="5" width="1" height="1" />
+                                <rect x="6" y="5" width="1" height="1" />
+                                <rect x="9" y="5" width="1" height="1" />
+                                <rect x="11" y="5" width="1" height="1" />
+                                <rect x="13" y="5" width="1" height="9" />
+                                <rect x="1" y="6" width="1" height="7" />
+                                <rect x="10" y="6" width="1" height="1" />
+                                <rect x="14" y="6" width="1" height="7" />
+                                <rect x="4" y="7" width="1" height="6" />
+                                <rect x="6" y="7" width="1" height="5" />
+                                <rect x="9" y="7" width="1" height="5" />
+                                <rect x="11" y="7" width="1" height="6" />
+                                <rect x="0" y="8" width="1" height="4" />
+                                <rect x="5" y="8" width="1" height="3" />
+                                <rect x="10" y="8" width="1" height="3" />
+                                <rect x="15" y="8" width="1" height="4" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Game</span>
+                    </div>
+
+
+                    <div class="nav-button-wrapper">
+                        <div class="fab-icon-button" data-index="4">
+                            <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="crispEdges">
+                                <rect x="1" y="6" width="2" height="4" />
+                                <rect x="7" y="6" width="2" height="4" />
+                                <rect x="13" y="6" width="2" height="4" />
+                                <rect x="0" y="7" width="1" height="2" />
+                                <rect x="3" y="7" width="1" height="2" />
+                                <rect x="6" y="7" width="1" height="2" />
+                                <rect x="9" y="7" width="1" height="2" />
+                                <rect x="12" y="7" width="1" height="2" />
+                                <rect x="15" y="7" width="1" height="2" />
+                            </svg>
+                        </div>
+                        <span class="nav-label">Else</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="snap-section min-h-screen flex items-center justify-center p-8" id="section-experience">
         <div class="max-w-6xl mx-auto w-full">
             <h1 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-12"
                 style="animation: float-2 4s ease-in-out infinite;">
-                Work Experience
+                Work <span class="text-3xl md:text-[inherit]">Experience</span>
             </h1>
 
 
@@ -1546,7 +1944,7 @@
     </div>
 
 
-    <div class="snap-section h-screen flex items-center justify-center p-4">
+    <div class="snap-section h-screen flex items-center justify-center p-4" id="section-dive-deeper">
         <div class="text-center max-w-3xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-black text-white text-shadow-gold"
                 style="animation: float-3 3.5s ease-in-out infinite;">
@@ -1620,16 +2018,16 @@
 
 
     const iconColors = {
-        github: new THREE.Color(0xffffff),
-        discord: new THREE.Color(0x5865F2),
+        github: new THREE.Color(0xffffff).multiplyScalar(0.6),
+        discord: new THREE.Color(0x5865F2).multiplyScalar(0.6),
         gmail: [
-            new THREE.Color(0xEA4335),
-            new THREE.Color(0xFBBC05),
-            new THREE.Color(0x34A853),
-            new THREE.Color(0x4285F4)
+            new THREE.Color(0xEA4335).multiplyScalar(0.6),
+            new THREE.Color(0xFBBC05).multiplyScalar(0.6),
+            new THREE.Color(0x34A853).multiplyScalar(0.6),
+            new THREE.Color(0x4285F4).multiplyScalar(0.6)
         ],
-        whatsapp: new THREE.Color(0x25D366),
-        crab: new THREE.Color(0xFF6B35)
+        whatsapp: new THREE.Color(0x25D366).multiplyScalar(0.6),
+        crab: new THREE.Color(0xFF6B35).multiplyScalar(0.6)
     };
 
     function init() {
@@ -1674,18 +2072,21 @@
         scene.add(topLight);
 
         createMainParticles();
-        createLogoParticles();
-        generateIconTargets();
-        setupIconEventListeners();
+
+        if (!isMobile) {
+            createLogoParticles();
+            generateIconTargets();
+            setupIconEventListeners();
+        }
 
         window.addEventListener('resize', onWindowResize);
         window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('scroll', onScroll);
+        document.getElementById('scroll-container').addEventListener('scroll', onScroll);
     }
 
     function createMainParticles() {
         const isMobile = window.innerWidth < 768;
-        const particleCount = isMobile ? 300 : 2000;
+        const particleCount = isMobile ? 150 : 400;
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
         const baseColor = new THREE.Color(0x001f3f);
@@ -2253,9 +2654,16 @@
         implodeProgress = 0;
     }
 
+    let lastWidth = window.innerWidth;
     function onWindowResize() {
         const width = window.innerWidth;
         const height = window.innerHeight;
+
+        const isMobile = window.innerWidth < 768;
+        if (isMobile && width === lastWidth) {
+            return;
+        }
+        lastWidth = width;
 
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
@@ -2273,15 +2681,17 @@
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     }
 
-    function onScroll() {
-        const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    function onScroll(e) {
+        const container = e.target || document.getElementById('scroll-container');
+        const maxScroll = container.scrollHeight - container.clientHeight;
+        const scrollPercent = maxScroll > 0 ? container.scrollTop / maxScroll : 0;
 
         camera.position.y = -scrollPercent * 100;
 
         const sunlight = document.getElementById('sunlight');
         if (sunlight) {
             const sunlightOffset = -scrollPercent * 150;
-            sunlight.style.transform = `translateY(${sunlightOffset}vh)`;
+            sunlight.style.transform = `translateY(${sunlightOffset}%)`;
             sunlight.style.opacity = Math.max(0, 1 - scrollPercent * 1.5);
         }
 
@@ -2414,7 +2824,7 @@
             positions[i3 + 2] = data.currentPos.z;
 
 
-            const depthFactor = Math.max(0, Math.min(1, (data.currentPos.z + 250) / 300)) * 0.8;
+            const depthFactor = Math.max(0, Math.min(1, (data.currentPos.z + 250) / 300)) * 0.4;
             let r = 0.0 + (0.290 - 0.0) * depthFactor;
             let g = 0.121 + (0.620 - 0.121) * depthFactor;
             let b = 0.247 + (1.0 - 0.247) * depthFactor;
@@ -2610,9 +3020,13 @@
                         morphZ = basePos.z + (targetPos.z - basePos.z) * easedProgress;
                     }
                 }
-                const jitterAmount = 0.3;
-                const jitterX = Math.sin(elapsedTime * 2 + i * 0.5) * jitterAmount;
-                const jitterY = Math.cos(elapsedTime * 1.7 + i * 0.3) * jitterAmount;
+
+                const randomPhase = i * 13.37;
+                const orbitSpeed = 1.0 + ((i * 37) % 100) * 0.015;
+                const orbitRadius = 0.4 + Math.sin(elapsedTime * 0.5 + i) * 0.2;
+
+                const jitterX = Math.cos(elapsedTime * orbitSpeed + randomPhase) * orbitRadius;
+                const jitterY = Math.sin(elapsedTime * orbitSpeed + randomPhase) * orbitRadius;
 
                 const jitteredX = morphX + jitterX;
                 const jitteredY = morphY + jitterY;
@@ -2723,26 +3137,38 @@
 
     fabHighlight.style.transform = 'translateY(0px)';
 
-    const inlineFabButtons = document.querySelectorAll('.inline-nav-box .fab-icon-button');
-    const inlineFabHighlight = document.getElementById('inline-fab-highlight');
+    const inlineNavBoxes = document.querySelectorAll('.inline-nav-box');
     const categories = ['web', 'mobile', 'desktop', 'game', 'else'];
 
-    if (inlineFabButtons.length > 0 && inlineFabHighlight) {
-        inlineFabButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
+    if (inlineNavBoxes.length > 0) {
+        inlineNavBoxes.forEach(navBox => {
+            const buttons = navBox.querySelectorAll('.fab-icon-button');
+            const highlight = navBox.querySelector('.fab-highlight');
 
-                inlineFabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    const btnIndex = parseInt(button.getAttribute('data-index'), 10) || index;
 
-                const offset = index * (48 + 12);
-                inlineFabHighlight.style.transform = `translateY(${offset}px)`;
 
-                const selectedCategory = categories[index];
-                filterSkillCards(selectedCategory);
+                    const allMatchingButtons = document.querySelectorAll(`.inline-nav-box .fab-icon-button[data-index="${btnIndex}"]`);
+                    document.querySelectorAll('.inline-nav-box .fab-icon-button').forEach(btn => btn.classList.remove('active'));
+                    allMatchingButtons.forEach(btn => btn.classList.add('active'));
+
+
+                    document.querySelectorAll('.inline-nav-box .fab-highlight').forEach(hl => {
+                        const offset = btnIndex * (48 + 12);
+                        hl.style.transform = `translateY(${offset}px)`;
+                    });
+
+                    const selectedCategory = categories[btnIndex];
+                    filterSkillCards(selectedCategory);
+                });
             });
-        });
 
-        inlineFabHighlight.style.transform = 'translateY(0px)';
+            if (highlight) {
+                highlight.style.transform = 'translateY(0px)';
+            }
+        });
     }
 
     function filterSkillCards(category) {
@@ -2790,13 +3216,13 @@
     filterSkillCards('web');
 
     const bottomNav = document.getElementById('bottom-nav');
-    const diveDeeperSection = document.querySelector('.snap-section:nth-child(4)');
+    const diveDeeperSection = document.getElementById('section-dive-deeper');
     const bottomNavIcons = document.querySelectorAll('.bottom-nav-icon');
 
     if (bottomNavIcons.length >= 3) {
 
         bottomNavIcons[0].addEventListener('click', () => {
-            const homeSection = document.querySelector('.snap-section:nth-child(1)');
+            const homeSection = document.getElementById('section-home');
             if (homeSection) {
                 homeSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -2804,7 +3230,7 @@
 
 
         bottomNavIcons[1].addEventListener('click', () => {
-            const aboutMeSection = document.querySelector('.snap-section:nth-child(2)');
+            const aboutMeSection = document.getElementById('section-about');
             if (aboutMeSection) {
                 aboutMeSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -2812,7 +3238,7 @@
 
 
         bottomNavIcons[2].addEventListener('click', () => {
-            const workExperienceSection = document.querySelector('.snap-section:nth-child(3)');
+            const workExperienceSection = document.getElementById('section-experience');
             if (workExperienceSection) {
                 workExperienceSection.scrollIntoView({ behavior: 'smooth' });
             }
