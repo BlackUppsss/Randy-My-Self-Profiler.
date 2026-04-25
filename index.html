@@ -36,7 +36,6 @@
         -ms-user-select: none;
     }
 
-    /* Section snap styling */
     .snap-section {
         scroll-snap-align: start;
         scroll-snap-stop: always;
@@ -136,7 +135,7 @@
         transition: opacity 0.1s ease;
     }
 
-    /* Pixel Art Rounded Corners */
+
     .pixel-corners {
         position: relative;
         clip-path: polygon(0px 8px,
@@ -192,7 +191,7 @@
         z-index: -1;
     }
 
-    /* Pixel Art Rounded Corners - Small (for cards with visible borders) */
+
     .pixel-corners-small {
         position: relative;
         clip-path: polygon(0px 4px,
@@ -234,7 +233,7 @@
         z-index: -1;
     }
 
-    /* Prevent text selection on cards */
+
     .pixel-corners-small,
     .pixel-corners {
         user-select: none;
@@ -243,7 +242,6 @@
         -ms-user-select: none;
     }
 
-    /* Floating Animations */
     @keyframes float-1 {
 
         0%,
@@ -340,7 +338,6 @@
         }
     }
 
-    /* Floating animation classes - these override entrance animation */
     .skill-card.float-1 {
         animation: float-1 3s ease-in-out infinite !important;
     }
@@ -373,7 +370,7 @@
         animation: float-8 4.2s ease-in-out infinite !important;
     }
 
-    /* Floating Action Buttons - Card Theme (HIDDEN - replaced by inline nav) */
+
     .floating-nav-container {
         display: none !important;
     }
@@ -435,7 +432,7 @@
         fill: rgba(255, 255, 255, 0.95);
     }
 
-    /* Navigation button wrapper and label */
+
     .nav-button-wrapper {
         display: flex;
         flex-direction: column;
@@ -462,17 +459,17 @@
 
     .fab-highlight {
         display: none;
-        /* Hidden as user requested no highlight */
+
     }
 
-    /* Hide on mobile */
+
     @media (max-width: 768px) {
         .floating-nav-container {
             display: none;
         }
     }
 
-    /* Technical Skills Grid Layout */
+
     .tech-skills-grid {
         display: grid;
         grid-template-columns: 1fr auto 100px;
@@ -495,7 +492,7 @@
         position: relative;
     }
 
-    /* Right Side Floating Buttons */
+
     .bottom-floating-nav {
         position: fixed;
         right: 20px;
@@ -510,7 +507,7 @@
         visibility: hidden;
         pointer-events: none;
         transition: visibility 0s linear 0.7s;
-        /* Delay hiding until animations complete */
+
     }
 
     .bottom-nav-box {
@@ -530,10 +527,10 @@
         cursor: pointer;
         opacity: 0;
         transform: translateX(30px);
-        /* No transition here - animations will handle opacity and transform */
+
     }
 
-    /* Slide in animations with floating effect when visible */
+
     .bottom-floating-nav:not(.nav-hidden) .bottom-nav-box .bottom-nav-icon:nth-child(1) {
         animation: slideInRight 0.5s ease 0.1s forwards, float-1 3s ease-in-out infinite 0.6s;
     }
@@ -554,8 +551,7 @@
         animation: slideInRight 0.5s ease 0.5s forwards, float-5 4.5s ease-in-out infinite 1s;
     }
 
-    /* Slide out is handled by JavaScript with Web Animations API
-       to preserve the current float Y position */
+
 
     @keyframes slideInRight {
         from {
@@ -593,14 +589,14 @@
         transform: scale(1.2);
     }
 
-    /* ===== Timeline Layout ===== */
+
     .timeline-container {
         position: relative;
         width: 100%;
         padding: 20px 0;
     }
 
-    /* The vertical center line */
+
     .timeline-line {
         position: absolute;
         left: 50%;
@@ -618,19 +614,19 @@
         box-sizing: border-box;
     }
 
-    /* Left side item */
+
     .timeline-item.left {
         left: 0;
         text-align: right;
     }
 
-    /* Right side item */
+
     .timeline-item.right {
         left: 50%;
         text-align: left;
     }
 
-    /* Timeline dot/node */
+
     .timeline-dot {
         position: absolute;
         width: 16px;
@@ -665,7 +661,7 @@
         left: -8px;
     }
 
-    /* Horizontal connector line from dot to card */
+
     .timeline-connector {
         position: absolute;
         top: 37px;
@@ -682,7 +678,7 @@
         left: 8px;
     }
 
-    /* Date badge */
+
     .timeline-date {
         display: inline-block;
         padding: 4px 12px;
@@ -693,7 +689,7 @@
         clip-path: polygon(0px 4px, 4px 4px, 4px 0px, calc(100% - 4px) 0px, calc(100% - 4px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0px calc(100% - 4px));
     }
 
-    /* Video Carousel */
+
     .video-carousel-container {
         position: relative;
         width: 100%;
@@ -771,7 +767,7 @@
         transform: scale(1.2);
     }
 
-    /* Tech stack badge with pixel corners */
+
     .tech-badge {
         display: inline-block;
         padding: 4px 12px;
@@ -779,12 +775,12 @@
         clip-path: polygon(0px 4px, 4px 4px, 4px 0px, calc(100% - 4px) 0px, calc(100% - 4px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0px calc(100% - 4px));
     }
 
-    /* Force left-align text inside cards regardless of timeline side */
+
     .timeline-item .pixel-corners {
         text-align: left;
     }
 
-    /* Skill Card Filter Animations */
+
     .skill-card {
         transition: opacity 0.3s ease-out, transform 0.3s ease-out;
         opacity: 1;
@@ -798,7 +794,7 @@
         pointer-events: none;
     }
 
-    /* Enhanced entrance animations - simplified to single direction */
+
     @keyframes slideInFromBottom {
         0% {
             opacity: 0;
@@ -818,7 +814,7 @@
         animation-delay: var(--animation-delay, 0ms);
     }
 
-    /* Timeline row: two items side-by-side */
+
     .timeline-row {
         display: flex;
         position: relative;
@@ -834,7 +830,7 @@
         margin-left: auto;
     }
 
-    /* Responsive: stack on mobile */
+
     @media (max-width: 768px) {
         .tech-skills-grid {
             grid-template-columns: 1fr;
@@ -875,7 +871,7 @@
 <div class="sunlight-overlay" id="sunlight"></div>
 <div class="depth-darkness" id="darkness"></div>
 
-<!-- Floating Navigation Box -->
+
 <div class="floating-nav-container" id="floating-nav">
     <div class="floating-nav-box">
         <div class="fab-highlight" id="fab-highlight"></div>
@@ -908,7 +904,7 @@
     </div>
 </div>
 
-<!-- Bottom Floating Navigation (3 icons) -->
+
 <div class="bottom-floating-nav" id="bottom-nav">
     <div class="bottom-nav-box">
         <div class="bottom-nav-icon">
@@ -1069,7 +1065,7 @@
 
     </div>
 
-    <!-- Profile Section -->
+
     <div class="snap-section min-h-screen flex items-center justify-center p-8">
         <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-8"
@@ -1077,10 +1073,10 @@
                 About Me
             </h2>
 
-            <!-- About Description and Tech Stack - Two Column Layout -->
+
             <div class="pixel-corners bg-white/5 backdrop-blur-sm flex flex-col md:flex-row gap-0"
                 style="animation: float-3 3.5s ease-in-out infinite;">
-                <!-- Left Column: About Description -->
+
                 <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl md:text-4xl font-bold text-white text-center">Introduction</h3>
                     <p class="text-lg md:text-xl text-gray-300 text-center leading-relaxed">
@@ -1088,10 +1084,10 @@
                         problem-solving, and pixel art.
                     </p>
 
-                    <!-- My Games Heading -->
+
                     <h3 class="text-2xl md:text-4xl font-bold text-white text-center mt-6">My Games</h3>
 
-                    <!-- Video Carousel -->
+
                     <div class="video-carousel-container">
                         <div class="video-carousel" id="videoCarousel">
                             <div class="video-slide">
@@ -1124,17 +1120,17 @@
                     </div>
                 </div>
 
-                <!-- Vertical Separator -->
+
                 <div class="hidden md:block w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
 
-                <!-- Right Column: Technical Skills -->
+
                 <div class="w-full md:w-6/12 p-8 flex flex-col justify-between">
                     <h3 class="text-2xl md:text-4xl font-bold text-white text-center mb-6">Technical Skills</h3>
 
-                    <!-- Column 1: Skill Cards -->
+
                     <div class="flex flex-wrap justify-center gap-3" id="skills-container">
-                        <!-- Web Category Skills -->
-                        <!-- React Skill Card -->
+
+
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all"
                             data-category="web">
                             <img src="Assets/SVG/MongoDB.svg" alt="MongoDB" class="w-10 h-10">
@@ -1207,7 +1203,7 @@
                             <span class="font-semibold text-white text-lg md:text-xl">SCSS</span>
                         </div>
 
-                        <!-- Mobile Category Skills -->
+
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
                             data-category="mobile">
                             <img src="Assets/SVG/React.svg" alt="React Native" class="w-10 h-10">
@@ -1256,7 +1252,7 @@
                             <span class="font-semibold text-white text-lg md:text-xl">Isar</span>
                         </div>
 
-                        <!-- Desktop Category Skills -->
+
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
                             data-category="desktop">
                             <img src="Assets/SVG/Rust.svg" alt="Rust" class="w-10 h-10">
@@ -1293,7 +1289,7 @@
                             <span class="font-semibold text-white text-lg md:text-xl">SQLite</span>
                         </div>
 
-                        <!-- Game Category Skills -->
+
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
                             data-category="game">
                             <img src="Assets/SVG/Unity.svg" alt="Unity" class="w-10 h-10">
@@ -1312,7 +1308,7 @@
                             <span class="font-semibold text-white text-lg md:text-xl">Godot</span>
                         </div>
 
-                        <!-- Else Category Skills -->
+
                         <div class="skill-card pixel-corners-small bg-white/5 p-2 flex flex-row items-center gap-1 transition-all hidden"
                             data-category="else">
                             <img src="Assets/SVG/Postman.svg" alt="Postman" class="w-10 h-10">
@@ -1381,7 +1377,7 @@
                             <span class="nav-label">Mobile</span>
                         </div>
 
-                        <!-- Button 3: Desktop -->
+
                         <div class="nav-button-wrapper">
                             <div class="fab-icon-button" data-index="2">
                                 <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
@@ -1437,7 +1433,7 @@
                             <span class="nav-label">Game</span>
                         </div>
 
-                        <!-- Button 5: Else -->
+
                         <div class="nav-button-wrapper">
                             <div class="fab-icon-button" data-index="4">
                                 <svg viewBox="0 0 16 16" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg"
@@ -1459,14 +1455,14 @@
                 </div>
             </div>
 
-            <!-- Horizontal Navigation Box - Below About Me Card -->
 
 
-            <!-- About Description -->
+
+
         </div>
     </div>
 
-    <!-- Experience Section with Center Timeline -->
+
     <div class="snap-section min-h-screen flex items-center justify-center p-8">
         <div class="max-w-6xl mx-auto w-full">
             <h1 class="text-4xl md:text-6xl font-black text-white text-shadow-gold text-center mb-12"
@@ -1474,12 +1470,12 @@
                 Work Experience
             </h1>
 
-            <!-- Timeline -->
+
             <div class="timeline-container">
-                <!-- Vertical center line -->
+
                 <div class="timeline-line"></div>
 
-                <!-- Keep Learning - RIGHT side (above Tiga Jaya Star) -->
+
                 <div class="timeline-item right" style="margin-bottom: 40px;">
                     <div class="timeline-dot"></div>
                     <div class="timeline-connector"></div>
@@ -1490,7 +1486,7 @@
                     </div>
                 </div>
 
-                <!-- Tiga Jaya Star - LEFT side -->
+
                 <div class="timeline-item left" style="margin-bottom: 40px;">
                     <div class="timeline-dot"></div>
                     <div class="timeline-connector"></div>
@@ -1523,7 +1519,7 @@
                     </div>
                 </div>
 
-                <!-- Gea GPS Tracker - RIGHT side -->
+
                 <div class="timeline-item right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-connector"></div>
@@ -1549,7 +1545,7 @@
         </div>
     </div>
 
-    <!-- Dive Deeper Section -->
+
     <div class="snap-section h-screen flex items-center justify-center p-4">
         <div class="text-center max-w-3xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-black text-white text-shadow-gold"
@@ -1587,34 +1583,34 @@
 
     let particleData = [];
     let logoParticleData = [];
-    let crabPosition = { x: 0, y: 0, z: -30 }; // Current crab position
-    let crabVelocity = { x: 0.05, y: 0.03 }; // Movement speed
-    let crabRotation = 0; // Current rotation in radians
-    let targetRotation = 0; // Target rotation for smooth transitions
+    let crabPosition = { x: 0, y: 0, z: -30 };
+    let crabVelocity = { x: 0.05, y: 0.03 };
+    let crabRotation = 0;
+    let targetRotation = 0;
 
-    // Icon morphing state (hover-based)
-    let morphState = 'crab'; // Current shape: 'crab', 'github', 'discord', 'email', 'whatsapp'
-    let targetMorphState = 'crab'; // Target shape for transition
-    let morphProgress = 0; // 0 to 1 transition progress (legacy, kept for compatibility)
-    let morphing = false; // Is currently morphing
-    let morphSnapshot = null; // Snapshot of positions when interruption happens
 
-    // Two-phase morphing system
-    let morphPhase = 'none'; // 'explode', 'implode', 'none'
-    let explodeProgress = 0; // 0 to 1 for explode phase
-    let implodeProgress = 0; // 0 to 1 for implode phase
-    let explodeDirection = []; // Random 3D direction vector for each particle
+    let morphState = 'crab';
+    let targetMorphState = 'crab';
+    let morphProgress = 0;
+    let morphing = false;
+    let morphSnapshot = null;
 
-    // Simple push effect for main particles during explosion
+
+    let morphPhase = 'none';
+    let explodeProgress = 0;
+    let implodeProgress = 0;
+    let explodeDirection = [];
+
+
     const PUSH_EFFECT = {
-        radius: 40,      // Radius of push effect
-        strength: 1.5     // Strength of push force
+        radius: 40,
+        strength: 1.5
     };
 
-    // Icon target positions (parsed from SVG paths)
+
     let iconTargetPositions = {};
 
-    // Icon SVG paths extracted from HTML
+
     const iconPaths = {
         github: "M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z",
         discord: "M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z",
@@ -1622,18 +1618,18 @@
         whatsapp: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
     };
 
-    // Brand colors for each icon
+
     const iconColors = {
-        github: new THREE.Color(0xffffff),      // White
-        discord: new THREE.Color(0x5865F2),     // Discord Blurple
-        gmail: [                                  // Gmail multicolor
-            new THREE.Color(0xEA4335),  // Red
-            new THREE.Color(0xFBBC05),  // Yellow  
-            new THREE.Color(0x34A853),  // Green
-            new THREE.Color(0x4285F4)   // Blue
+        github: new THREE.Color(0xffffff),
+        discord: new THREE.Color(0x5865F2),
+        gmail: [
+            new THREE.Color(0xEA4335),
+            new THREE.Color(0xFBBC05),
+            new THREE.Color(0x34A853),
+            new THREE.Color(0x4285F4)
         ],
-        whatsapp: new THREE.Color(0x25D366),    // WhatsApp Green
-        crab: new THREE.Color(0xFF6B35)         // Crab orange (default)
+        whatsapp: new THREE.Color(0x25D366),
+        crab: new THREE.Color(0xFF6B35)
     };
 
     function init() {
@@ -1642,16 +1638,16 @@
         camera.position.set(0, 0, 50);
 
         const canvas = document.getElementById('bg-canvas');
-        // Performance optimization: disable antialiasing on mobile
+
         const isMobile = window.innerWidth < 768;
         renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        // Performance optimization: reduce pixel ratio to 1 for better performance
+
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 
         composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
-        // Performance optimization: use half-resolution for bloom (4x faster)
+
         const bloomPass = new UnrealBloomPass(
             new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2),
             1.0,
@@ -1660,19 +1656,19 @@
         );
         composer.addPass(bloomPass);
 
-        // Add blue background to scene
+
         scene.background = new THREE.Color(0x003366);
 
-        // Add ambient light for overall illumination
+
         const ambientLight = new THREE.AmbientLight(0x4488ff, 0.3);
         scene.add(ambientLight);
 
-        // Add directional light from above (simulating sunlight from ocean surface)
+
         const directionalLight = new THREE.DirectionalLight(0x88ccff, 1.2);
-        directionalLight.position.set(0, 50, 0); // Light from above
+        directionalLight.position.set(0, 50, 0);
         scene.add(directionalLight);
 
-        // Add subtle light from top-front for better depth perception
+
         const topLight = new THREE.PointLight(0xaaddff, 0.8, 200);
         topLight.position.set(0, 80, 30);
         scene.add(topLight);
@@ -1695,15 +1691,15 @@
 
         for (let i = 0; i < particleCount; i++) {
             const i3 = i * 3;
-            // Random spawn position across 3D space
+
             const x = (Math.random() - 0.5) * 150;
             const y = (Math.random() - 0.5) * 150;
             const z = (Math.random() - 0.5) * 200;
 
-            // Random velocity in ALL directions (x, y, z)
-            const velocityX = (Math.random() - 0.5) * 0.8; // -0.4 to 0.4
-            const velocityY = (Math.random() - 0.5) * 0.8; // -0.4 to 0.4
-            const velocityZ = (Math.random() - 0.5) * 0.8; // -0.4 to 0.4
+
+            const velocityX = (Math.random() - 0.5) * 0.8;
+            const velocityY = (Math.random() - 0.5) * 0.8;
+            const velocityZ = (Math.random() - 0.5) * 0.8;
 
             particleData.push({
                 originalPos: new THREE.Vector3(x, y, z),
@@ -1736,7 +1732,7 @@
         scene.add(particles);
     }
 
-    // Enhanced SVG path parser with transform offset support (GLOBAL SCOPE)
+
     function parseFullImageSVGPath(pathString, offsetX = 0, offsetY = 0) {
         const points = [];
         const commands = pathString.match(/[MmLlHhVvCcSsQqTtAaZz][^MmLlHhVvCcSsQqTtAaZz]*/g) || [];
@@ -1750,17 +1746,15 @@
             const isRelative = type === type.toLowerCase();
             const coords = cmd.slice(1).trim().split(/[\s,]+/).map(Number).filter(n => !isNaN(n));
 
-            // Helper to add point with validation
+
             const addPoint = (x, y) => {
                 if (!isNaN(x) && !isNaN(y) && isFinite(x) && isFinite(y)) {
                     points.push({ x: x + offsetX, y: y + offsetY });
-                } else {
-                    console.warn(`[parseSVGPath] Skipping invalid point: (${x}, ${y})`);
                 }
             };
 
             switch (type.toUpperCase()) {
-                case 'M': // MoveTo
+                case 'M':
                     if (coords.length >= 2) {
                         if (isRelative) {
                             currentX += coords[0];
@@ -1786,7 +1780,7 @@
                     }
                     break;
 
-                case 'L': // LineTo
+                case 'L':
                     for (let i = 0; i < coords.length; i += 2) {
                         if (i + 1 < coords.length) {
                             if (isRelative) {
@@ -1801,7 +1795,7 @@
                     }
                     break;
 
-                case 'H': // Horizontal line
+                case 'H':
                     for (let i = 0; i < coords.length; i++) {
                         if (isRelative) {
                             currentX += coords[i];
@@ -1812,7 +1806,7 @@
                     }
                     break;
 
-                case 'V': // Vertical line
+                case 'V':
                     for (let i = 0; i < coords.length; i++) {
                         if (isRelative) {
                             currentY += coords[i];
@@ -1823,7 +1817,7 @@
                     }
                     break;
 
-                case 'C': // Cubic Bezier
+                case 'C':
                     for (let i = 0; i < coords.length; i += 6) {
                         if (i + 5 < coords.length) {
                             let x1 = coords[i], y1 = coords[i + 1];
@@ -1836,7 +1830,7 @@
                                 x3 += currentX; y3 += currentY;
                             }
 
-                            // Sample 20 points for high-detail curves
+
                             for (let t = 0.05; t <= 1; t += 0.05) {
                                 const mt = 1 - t;
                                 const x = mt * mt * mt * currentX +
@@ -1858,7 +1852,7 @@
                     }
                     break;
 
-                case 'S': // Smooth cubic Bezier
+                case 'S':
                     for (let i = 0; i < coords.length; i += 4) {
                         if (i + 3 < coords.length) {
                             let x1 = 2 * currentX - lastControlX;
@@ -1871,7 +1865,7 @@
                                 x3 += currentX; y3 += currentY;
                             }
 
-                            // Sample 20 points for consistency
+
                             for (let t = 0.05; t <= 1; t += 0.05) {
                                 const mt = 1 - t;
                                 const x = mt * mt * mt * currentX +
@@ -1893,7 +1887,7 @@
                     }
                     break;
 
-                case 'A': // Arc - approximate with line segments
+                case 'A':
                     for (let i = 0; i < coords.length; i += 7) {
                         if (i + 6 < coords.length) {
                             let x = coords[i + 5];
@@ -1904,7 +1898,7 @@
                                 y += currentY;
                             }
 
-                            // 15 segments for smoother arcs
+
                             const steps = 15;
                             for (let j = 1; j <= steps; j++) {
                                 const t = j / steps;
@@ -1919,7 +1913,7 @@
                     }
                     break;
 
-                case 'Z': // Close path
+                case 'Z':
                     if (Math.abs(currentX - startX) > 0.01 || Math.abs(currentY - startY) > 0.01) {
                         addPoint(startX, startY);
                     }
@@ -1930,417 +1924,47 @@
         });
         return points;
     }
-    // Enhanced SVG path parser with transform offset support (GLOBAL SCOPE)
-    // densityMultiplier: 1 = sparse (crab), 2+ = dense (icons)
-    function parseSVGPath(pathString, offsetX = 0, offsetY = 0, densityMultiplier = 1) {
-        const points = [];
-        const commands = pathString.match(/[MmLlHhVvCcSsQqTtAaZz][^MmLlHhVvCcSsQqTtAaZz]*/g) || [];
 
-        let currentX = 0, currentY = 0;
-        let startX = 0, startY = 0;
-        let lastControlX = 0, lastControlY = 0;
-
-        commands.forEach(cmd => {
-            const type = cmd[0];
-            const isRelative = type === type.toLowerCase();
-            const coords = cmd.slice(1).trim().split(/[\s,]+/).map(Number).filter(n => !isNaN(n));
-
-            // Helper to add point with validation
-            const addPoint = (x, y) => {
-                if (!isNaN(x) && !isNaN(y) && isFinite(x) && isFinite(y)) {
-                    points.push({ x: x + offsetX, y: y + offsetY });
-                } else {
-                    console.warn(`[parseSVGPath] Skipping invalid point: (${x}, ${y})`);
-                }
-            };
-
-            switch (type.toUpperCase()) {
-                case 'M': // MoveTo
-                    if (coords.length >= 2) {
-                        if (isRelative) {
-                            currentX += coords[0];
-                            currentY += coords[1];
-                        } else {
-                            currentX = coords[0];
-                            currentY = coords[1];
-                        }
-                        startX = currentX;
-                        startY = currentY;
-                        addPoint(currentX, currentY);
-
-                        for (let i = 2; i < coords.length; i += 2) {
-                            if (isRelative) {
-                                currentX += coords[i];
-                                currentY += coords[i + 1];
-                            } else {
-                                currentX = coords[i];
-                                currentY = coords[i + 1];
-                            }
-                            addPoint(currentX, currentY);
-                        }
-                    }
-                    break;
-
-                case 'L': // LineTo
-                    for (let i = 0; i < coords.length; i += 2) {
-                        if (i + 1 < coords.length) {
-                            let targetX, targetY;
-                            if (isRelative) {
-                                targetX = currentX + coords[i];
-                                targetY = currentY + coords[i + 1];
-                            } else {
-                                targetX = coords[i];
-                                targetY = coords[i + 1];
-                            }
-
-                            // Interpolate points along the line for dense outline
-                            const dx = targetX - currentX;
-                            const dy = targetY - currentY;
-                            const dist = Math.sqrt(dx * dx + dy * dy);
-                            const steps = Math.max(2, Math.ceil(dist / (0.5 / densityMultiplier)));
-
-
-                            for (let j = 1; j <= steps; j++) {
-                                const t = j / steps;
-                                const x = currentX + dx * t;
-                                const y = currentY + dy * t;
-                                addPoint(x, y);
-                            }
-
-                            currentX = targetX;
-                            currentY = targetY;
-                        }
-                    }
-                    break;
-
-                case 'H': // Horizontal line
-                    for (let i = 0; i < coords.length; i++) {
-                        let targetX;
-                        if (isRelative) {
-                            targetX = currentX + coords[i];
-                        } else {
-                            targetX = coords[i];
-                        }
-
-                        // Interpolate along horizontal line
-                        const dx = targetX - currentX;
-                        const steps = Math.max(2, Math.ceil(Math.abs(dx) / (0.5 / densityMultiplier)));
-
-                        for (let j = 1; j <= steps; j++) {
-                            const t = j / steps;
-                            const x = currentX + dx * t;
-                            addPoint(x, currentY);
-                        }
-
-                        currentX = targetX;
-                    }
-                    break;
-
-                case 'V': // Vertical line
-                    for (let i = 0; i < coords.length; i++) {
-                        let targetY;
-                        if (isRelative) {
-                            targetY = currentY + coords[i];
-                        } else {
-                            targetY = coords[i];
-                        }
-
-                        // Interpolate along vertical line
-                        const dy = targetY - currentY;
-                        const steps = Math.max(2, Math.ceil(Math.abs(dy) / (0.5 / densityMultiplier)));
-
-                        for (let j = 1; j <= steps; j++) {
-                            const t = j / steps;
-                            const y = currentY + dy * t;
-                            addPoint(currentX, y);
-                        }
-
-                        currentY = targetY;
-                    }
-                    break;
-
-                case 'C': // Cubic Bezier
-                    for (let i = 0; i < coords.length; i += 6) {
-                        if (i + 5 < coords.length) {
-                            let x1 = coords[i], y1 = coords[i + 1];
-                            let x2 = coords[i + 2], y2 = coords[i + 3];
-                            let x3 = coords[i + 4], y3 = coords[i + 5];
-
-                            if (isRelative) {
-                                x1 += currentX; y1 += currentY;
-                                x2 += currentX; y2 += currentY;
-                                x3 += currentX; y3 += currentY;
-                            }
-
-                            // Sample 50 points for SUPER dense curves
-                            for (let t = 0.02; t <= 1; t += 0.02) {
-                                const mt = 1 - t;
-                                const x = mt * mt * mt * currentX +
-                                    3 * mt * mt * t * x1 +
-                                    3 * mt * t * t * x2 +
-                                    t * t * t * x3;
-                                const y = mt * mt * mt * currentY +
-                                    3 * mt * mt * t * y1 +
-                                    3 * mt * t * t * y2 +
-                                    t * t * t * y3;
-                                addPoint(x, y);
-                            }
-
-                            lastControlX = x2;
-                            lastControlY = y2;
-                            currentX = x3;
-                            currentY = y3;
-                        }
-                    }
-                    break;
-
-                case 'S': // Smooth cubic Bezier
-                    for (let i = 0; i < coords.length; i += 4) {
-                        if (i + 3 < coords.length) {
-                            let x1 = 2 * currentX - lastControlX;
-                            let y1 = 2 * currentY - lastControlY;
-                            let x2 = coords[i], y2 = coords[i + 1];
-                            let x3 = coords[i + 2], y3 = coords[i + 3];
-
-                            if (isRelative) {
-                                x2 += currentX; y2 += currentY;
-                                x3 += currentX; y3 += currentY;
-                            }
-
-                            // Sample 50 points for consistency
-                            for (let t = 0.02; t <= 1; t += 0.02) {
-                                const mt = 1 - t;
-                                const x = mt * mt * mt * currentX +
-                                    3 * mt * mt * t * x1 +
-                                    3 * mt * t * t * x2 +
-                                    t * t * t * x3;
-                                const y = mt * mt * mt * currentY +
-                                    3 * mt * mt * t * y1 +
-                                    3 * mt * t * t * y2 +
-                                    t * t * t * y3;
-                                addPoint(x, y);
-                            }
-
-                            lastControlX = x2;
-                            lastControlY = y2;
-                            currentX = x3;
-                            currentY = y3;
-                        }
-                    }
-                    break;
-
-                case 'A': // Arc - PROPER elliptical arc to bezier conversion
-                    for (let i = 0; i < coords.length; i += 7) {
-                        if (i + 6 < coords.length) {
-                            const rx = Math.abs(coords[i]);
-                            const ry = Math.abs(coords[i + 1]);
-                            const xAxisRotation = coords[i + 2] * Math.PI / 180;
-                            const largeArcFlag = coords[i + 3];
-                            const sweepFlag = coords[i + 4];
-                            let x2 = coords[i + 5];
-                            let y2 = coords[i + 6];
-
-                            if (isRelative) {
-                                x2 += currentX;
-                                y2 += currentY;
-                            }
-
-                            // Convert arc to cubic Bezier curves (SVG spec algorithm)
-                            const arcToBezier = (x1, y1, rx, ry, angle, large, sweep, x2, y2) => {
-                                // Handle degenerate cases
-                                if (x1 === x2 && y1 === y2) return [];
-                                if (rx === 0 || ry === 0) {
-                                    // Degenerate to line
-                                    const steps = Math.max(2, Math.ceil(Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2) / (0.5 / densityMultiplier)));
-                                    const pts = [];
-                                    for (let j = 1; j <= steps; j++) {
-                                        const t = j / steps;
-                                        pts.push({ x: x1 + (x2 - x1) * t, y: y1 + (y2 - y1) * t });
-                                    }
-                                    return pts;
-                                }
-
-                                const sinAngle = Math.sin(angle);
-                                const cosAngle = Math.cos(angle);
-
-                                // Step 1: Compute center point
-                                const dx = (x1 - x2) / 2;
-                                const dy = (y1 - y2) / 2;
-                                const x1p = cosAngle * dx + sinAngle * dy;
-                                const y1p = -sinAngle * dx + cosAngle * dy;
-
-                                let rxSq = rx * rx;
-                                let rySq = ry * ry;
-                                const x1pSq = x1p * x1p;
-                                const y1pSq = y1p * y1p;
-
-                                // Correct radii if needed
-                                let lambda = x1pSq / rxSq + y1pSq / rySq;
-                                if (lambda > 1) {
-                                    rx *= Math.sqrt(lambda);
-                                    ry *= Math.sqrt(lambda);
-                                    rxSq = rx * rx;
-                                    rySq = ry * ry;
-                                }
-
-                                const sign = large === sweep ? -1 : 1;
-                                const sq = Math.max(0, (rxSq * rySq - rxSq * y1pSq - rySq * x1pSq) / (rxSq * y1pSq + rySq * x1pSq));
-                                const coef = sign * Math.sqrt(sq);
-                                const cxp = coef * rx * y1p / ry;
-                                const cyp = -coef * ry * x1p / rx;
-
-                                const cx = cosAngle * cxp - sinAngle * cyp + (x1 + x2) / 2;
-                                const cy = sinAngle * cxp + cosAngle * cyp + (y1 + y2) / 2;
-
-                                // Step 2: Compute angles
-                                const ux = (x1p - cxp) / rx;
-                                const uy = (y1p - cyp) / ry;
-                                const vx = (-x1p - cxp) / rx;
-                                const vy = (-y1p - cyp) / ry;
-
-                                const n = Math.sqrt(ux * ux + uy * uy);
-                                const p = ux;
-                                let angleStart = Math.acos(p / n);
-                                if (uy < 0) angleStart = -angleStart;
-
-                                const np = Math.sqrt((ux * ux + uy * uy) * (vx * vx + vy * vy));
-                                const dot = ux * vx + uy * vy;
-                                let angleExtent = Math.acos(dot / np);
-                                if (ux * vy - uy * vx < 0) angleExtent = -angleExtent;
-
-                                if (sweep && angleExtent < 0) angleExtent += 2 * Math.PI;
-                                else if (!sweep && angleExtent > 0) angleExtent -= 2 * Math.PI;
-
-                                // Step 3: Generate points along arc
-                                const segments = Math.max(1, Math.ceil(Math.abs(angleExtent) / (Math.PI / 4))); // At least 1 segment per 45°
-                                const angleStep = angleExtent / segments;
-                                const points = [];
-
-                                for (let seg = 0; seg <= segments * (densityMultiplier * 5); seg++) {
-                                    const t = seg / (segments * (densityMultiplier * 5));
-                                    const angle = angleStart + angleExtent * t;
-                                    const xp = rx * Math.cos(angle);
-                                    const yp = ry * Math.sin(angle);
-                                    const x = cosAngle * xp - sinAngle * yp + cx;
-                                    const y = sinAngle * xp + cosAngle * yp + cy;
-                                    points.push({ x, y });
-                                }
-
-                                return points;
-                            };
-
-                            const arcPoints = arcToBezier(currentX, currentY, rx, ry, xAxisRotation, largeArcFlag, sweepFlag, x2, y2);
-                            arcPoints.forEach(pt => addPoint(pt.x, pt.y));
-
-                            currentX = x2;
-                            currentY = y2;
-                        }
-                    }
-                    break;
-
-                case 'Z': // Close path
-                    if (Math.abs(currentX - startX) > 0.01 || Math.abs(currentY - startY) > 0.01) {
-                        addPoint(startX, startY);
-                    }
-                    currentX = startX;
-                    currentY = startY;
-                    break;
-            }
-        });
-
-        console.log(`[parseSVGPath] Parsed ${points.length} valid points`);
-        return points;
-    }
-
-    // Fill shape with particles using ray-casting point-in-polygon algorithm
-    function fillShapeWithParticles(outlinePoints, density = 3) {
-        if (outlinePoints.length < 3) return outlinePoints;
-
-        // Calculate bounding box
-        const xs = outlinePoints.map(p => p.x);
-        const ys = outlinePoints.map(p => p.y);
-        const minX = Math.min(...xs);
-        const maxX = Math.max(...xs);
-        const minY = Math.min(...ys);
-        const maxY = Math.max(...ys);
-
-        const width = maxX - minX;
-        const height = maxY - minY;
-
-        console.log(`[fillShape] Bounds: ${width.toFixed(2)} x ${height.toFixed(2)}`);
-
-        // Ray casting algorithm - test if point is inside polygon
-        function isPointInPolygon(x, y, polygon) {
-            let inside = false;
-            for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-                const xi = polygon[i].x, yi = polygon[i].y;
-                const xj = polygon[j].x, yj = polygon[j].y;
-
-                const intersect = ((yi > y) !== (yj > y))
-                    && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-                if (intersect) inside = !inside;
-            }
-            return inside;
-        }
-
-        const filledPoints = [...outlinePoints]; // Keep outline
-
-        // Generate grid of points and test which are inside
-        const step = Math.max(width, height) / (density * 15); // Higher multiplier = tighter grid
-        let addedCount = 0;
-
-        for (let x = minX; x <= maxX; x += step) {
-            for (let y = minY; y <= maxY; y += step) {
-                if (isPointInPolygon(x, y, outlinePoints)) {
-                    filledPoints.push({ x, y, z: 0 });
-                    addedCount++;
-                }
-            }
-        }
-
-        console.log(`[fillShape] Added ${addedCount} fill points (total: ${filledPoints.length})`);
-        return filledPoints;
-    }
 
     function createLogoParticles() {
-        // Official Rustacean SVG paths from rustacean-flat-happy.svg
-        // ALL 9 paths with their transform offsets to position correctly
+
+
         const svgPaths = [
-            // Path 1: Main body top/shell - transform(1009.4, 506.362)
+
             { path: "M0,-7.203L-12.072,-32.209C-12.009,-33.156 -11.961,-34.107 -11.961,-35.062C-11.961,-63.408 -41.439,-89.533 -91.03,-110.451L-91.03,-93.058C-95.866,-94.977 -100.901,-96.845 -106.147,-98.651L-106.147,-106.759C-177.021,-132.319 -282.53,-148.537 -400.388,-148.537C-503.361,-148.537 -596.917,-136.157 -666.179,-115.983L-666.179,-87.737L-666.181,-87.737L-666.181,-121.925C-737.141,-99.375 -781.135,-68.048 -781.135,-33.41C-781.135,-27.95 -780.034,-22.572 -777.918,-17.297L-785.146,-4.43C-785.146,-4.43 -790.938,3.082 -780.74,18.932C-771.746,32.909 -726.692,87.617 -702.913,116.267C-692.699,130.954 -685.772,140.001 -685.167,139.126C-684.212,137.74 -691.518,110.165 -711.802,78.703C-721.268,61.808 -732.57,39.42 -739.356,22.884C-720.414,34.874 -609.126,90.913 -382.124,90.685C-150.13,90.453 -47.009,17.834 -35.691,7.948C-39.646,23.837 -53.159,55.981 -63.936,78.586C-81.642,110.917 -88.056,139.064 -87.232,140.456C-86.708,141.334 -80.667,132.015 -71.756,116.913C-51.025,87.37 -11.739,30.974 -3.889,16.608C5.007,0.323 0,-7.203 0,-7.203", offsetX: 1009.4, offsetY: 506.362 },
 
-            // Path 2: MAIN DETAILED BODY - transform(1079.49, 294.885)
+
             { path: "M0,204.135L-79.343,145.689C-80.088,143.089 -80.833,140.488 -81.603,137.908L-55.541,100.154C-52.881,96.314 -52.345,91.322 -54.072,86.943C-55.803,82.585 -59.587,79.461 -64.062,78.696L-108.128,71.217C-109.837,67.732 -111.626,64.301 -113.422,60.898L-94.907,18.51C-93.004,14.193 -93.402,9.175 -95.929,5.256C-98.446,1.319 -102.715,-0.981 -107.267,-0.802L-151.991,0.823C-154.306,-2.193 -156.658,-5.18 -159.058,-8.114L-148.78,-53.546C-147.738,-58.158 -149.054,-62.989 -152.267,-66.34C-155.462,-69.679 -160.105,-71.062 -164.52,-69.979L-208.082,-59.27C-210.902,-61.763 -213.77,-64.223 -216.67,-66.635L-215.103,-113.276C-214.935,-117.997 -217.136,-122.484 -220.915,-125.105C-224.692,-127.741 -229.485,-128.137 -233.616,-126.179L-274.254,-106.858C-277.527,-108.736 -280.819,-110.595 -284.146,-112.395L-291.327,-158.356C-292.056,-163.012 -295.051,-166.968 -299.246,-168.774C-303.431,-170.591 -308.222,-170.002 -311.894,-167.238L-348.126,-140.053C-351.695,-141.238 -355.279,-142.373 -358.905,-143.46L-374.522,-187.045C-376.11,-191.488 -379.772,-194.751 -384.238,-195.669C-388.688,-196.578 -393.266,-195.037 -396.352,-191.589L-426.851,-157.47C-430.536,-157.893 -434.228,-158.28 -437.927,-158.601L-461.476,-198.277C-463.86,-202.295 -468.073,-204.741 -472.615,-204.741C-477.144,-204.741 -481.365,-202.295 -483.733,-198.277L-507.288,-158.601C-510.989,-158.28 -514.696,-157.893 -518.376,-157.47L-548.875,-191.589C-551.965,-195.037 -556.559,-196.578 -560.997,-195.669C-565.457,-194.739 -569.125,-191.488 -570.704,-187.045L-586.333,-143.46C-589.954,-142.373 -593.538,-141.23 -597.113,-140.053L-633.333,-167.238C-637.016,-170.012 -641.811,-170.599 -646.001,-168.774C-650.182,-166.968 -653.189,-163.012 -653.914,-158.356L-661.1,-112.395C-664.422,-110.595 -667.714,-108.746 -670.995,-106.858L-711.629,-126.179C-715.756,-128.145 -720.574,-127.741 -724.333,-125.105C-728.106,-122.484 -730.313,-117.997 -730.143,-113.276L-728.581,-66.635C-731.475,-64.223 -734.337,-61.763 -737.172,-59.27L-780.726,-69.979C-785.149,-71.053 -789.788,-69.679 -792.991,-66.34C-796.212,-62.989 -797.517,-58.158 -796.482,-53.546L-786.225,-8.114C-788.603,-5.169 -790.958,-2.193 -793.267,0.823L-837.991,-0.802C-842.504,-0.937 -846.812,1.319 -849.334,5.256C-851.861,9.175 -852.244,14.193 -850.363,18.51L-831.835,60.898C-833.634,64.301 -835.421,67.732 -837.144,71.217L-881.207,78.696C-885.686,79.45 -889.459,82.572 -891.201,86.943C-892.929,91.322 -892.368,96.314 -889.727,100.154L-863.661,137.908C-863.862,138.575 -864.048,139.247 -864.248,139.916L-937.944,218.201C-937.944,218.201 -949.24,227.052 -932.797,247.855C-918.297,266.206 -843.846,338.951 -804.526,377.06C-787.92,396.408 -776.542,408.389 -775.354,407.353C-773.478,405.708 -783.326,370.506 -816.036,329.204C-841.252,292.148 -873.977,235.155 -866.303,228.586C-866.303,228.586 -857.574,217.505 -840.061,209.529C-839.42,210.041 -840.723,209.022 -840.061,209.529C-840.061,209.529 -470.466,380.02 -127.632,212.413C-88.468,205.388 -64.759,226.368 -64.759,226.368C-56.583,231.108 -77.755,289.712 -95.166,328.505C-118.845,372.555 -122.317,406.927 -120.31,408.119C-119.042,408.876 -110.427,395.766 -98.138,374.902C-67.814,332.649 -10.492,252.1 0,232.534C11.895,210.352 0,204.135 0,204.135", offsetX: 1079.49, offsetY: 294.885 },
 
-            // Path 3: Right claw - transform(917.896, 244.679)
+
             { path: "M0,232.466C0,232.466 53.179,230 123.032,159.004L132.93,137.025C132.93,137.025 24.513,29.177 193.048,-45.266C193.048,-45.266 178.293,-21.154 182.622,72.006C182.622,72.006 233.437,54.357 248.336,-27.934C248.336,-27.934 322.456,69.79 167.834,161.443C167.834,161.443 95.294,277.732 -6.971,266.593L0,232.466Z", offsetX: 917.896, offsetY: 244.679 },
 
-            // Path 4: Right eye - transform(676.997, 488.361)
+
             { path: "M0,-78.192C0,-78.192 36.935,-118.635 73.871,-78.192C73.871,-78.192 102.893,-24.265 73.871,2.695C73.871,2.695 26.384,40.443 0,2.695C0,2.695 -31.658,-26.964 0,-78.192", offsetX: 676.997, offsetY: 488.361 },
 
-            // Path 5: Right eye white - transform(719.761, 425.169)
+
             { path: "M0,0.004C0,15.75 -9.282,28.518 -20.732,28.518C-32.18,28.518 -41.462,15.75 -41.462,0.004C-41.462,-15.746 -32.18,-28.514 -20.732,-28.514C-9.282,-28.514 0,-15.746 0,0.004", offsetX: 719.761, offsetY: 425.169 },
 
-            // Path 6: Left eye - transform(512.148, 482.736)
+
             { path: "M0,-83.609C0,-83.609 63.355,-111.661 80.648,-49.047C80.648,-49.047 98.762,23.933 28.618,28.052C28.618,28.052 -60.826,10.824 0,-83.609", offsetX: 512.148, offsetY: 482.736 },
 
-            // Path 7: Left eye white - transform(543.968, 426.204)
+
             { path: "M0,0.002C0,16.241 -9.572,29.411 -21.381,29.411C-33.185,29.411 -42.76,16.241 -42.76,0.002C-42.76,-16.242 -33.185,-29.409 -21.381,-29.409C-9.572,-29.409 0,-16.242 0,0.002", offsetX: 543.968, offsetY: 426.204 },
 
-            // Path 8: Mouth - transform(593.317, 576.574)
+
             { path: "M0,-40.271L80.796,-46.755C80.796,-46.755 78.058,-33.749 67.517,-23.986C67.517,-23.986 39.727,6.484 7.844,-26.519C7.844,-26.519 2.627,-32.148 0,-40.271", offsetX: 593.317, offsetY: 576.574 },
 
-            // Path 9: Left claw - transform(269.796, 270.778)
+
             { path: "M0,190.741C-0.667,190.741 -1.321,190.79 -1.973,190.842C-28.207,184.871 -101.946,165.657 -121.437,134.479C-121.437,134.479 -22.21,21.607 -177.297,-50.54L-159.24,74.338C-159.24,74.338 -207.049,42.389 -217.366,-27.008C-217.366,-27.008 -333.789,57.486 -165.982,138.466C-165.982,138.466 -150.762,195.653 -4.633,241.281L-4.526,240.846C-3.055,241.118 -1.549,241.281 0,241.281C13.808,241.281 25.003,229.969 25.003,216.01C25.003,202.054 13.808,190.741 0,190.741", offsetX: 269.796, offsetY: 270.778 }
         ];
 
-        // Parse all paths with their offsets and combine
+
         let allPoints = [];
         svgPaths.forEach(pathObj => {
             allPoints = allPoints.concat(parseFullImageSVGPath(pathObj.path, pathObj.offsetX, pathObj.offsetY));
         });
 
-        // Sample to target particle count (REDUCED for better performance)
+
         const targetCount = 3500;
         const sampledShape = [];
         const step = Math.max(1, Math.floor(allPoints.length / targetCount));
@@ -2352,9 +1976,9 @@
 
         const positions = new Float32Array(sampledShape.length * 3);
         const colors = new Float32Array(sampledShape.length * 3);
-        const logoColor = new THREE.Color(0xff6b35); // Rust orange
+        const logoColor = new THREE.Color(0xff6b35);
 
-        // Calculate bounds for centering
+
         let minX = Infinity, maxX = -Infinity;
         let minY = Infinity, maxY = -Infinity;
         sampledShape.forEach(p => {
@@ -2366,19 +1990,19 @@
 
         const centerX = (minX + maxX) / 2;
         const centerY = (minY + maxY) / 2;
-        const scaleX = 80 / (maxX - minX); // Fit to ~80 units width
-        const scaleY = -80 / (maxY - minY); // NEGATIVE to flip crab upright
-        const scale = Math.min(Math.abs(scaleX), Math.abs(scaleY)) * 0.8; // Use smaller scale and scale down        
+        const scaleX = 80 / (maxX - minX);
+        const scaleY = -80 / (maxY - minY);
+        const scale = Math.min(Math.abs(scaleX), Math.abs(scaleY)) * 0.8;
         for (let i = 0; i < sampledShape.length; i++) {
             const i3 = i * 3;
             const point = sampledShape[i];
 
-            // Target position - centered and scaled (this is the logo shape)
+
             const targetX = (point.x - centerX) * scale;
             const targetY = (point.y - centerY) * scale;
-            const targetZ = 0; // Relative to crab center
+            const targetZ = 0;
 
-            // Start in logo formation (not scattered)
+
             positions[i3] = targetX + crabPosition.x;
             positions[i3 + 1] = targetY + crabPosition.y;
             positions[i3 + 2] = targetZ + crabPosition.z;
@@ -2388,24 +2012,24 @@
             colors[i3 + 2] = logoColor.b;
 
             logoParticleData.push({
-                relativePos: { x: targetX, y: targetY, z: targetZ }, // Position relative to crab center
+                relativePos: { x: targetX, y: targetY, z: targetZ },
                 index: i
             });
         }
 
 
-        // Create random size array for each particle (0.5 - 1.0)
+
         const sizes = new Float32Array(sampledShape.length);
         for (let i = 0; i < sampledShape.length; i++) {
-            sizes[i] = 0.8 + Math.random() * 0.6; // Random size between 0.5 and 1.0
+            sizes[i] = 0.8 + Math.random() * 0.6;
         }
 
         const geometry = new THREE.BufferGeometry();
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-        geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1)); // Per-particle size
+        geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
-        // Custom shader material to support per-particle sizes
+
         const material = new THREE.ShaderMaterial({
             uniforms: {},
             vertexShader: `
@@ -2416,7 +2040,7 @@
                 void main() {
                     vColor = color;
                     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-                    gl_PointSize = size * (300.0 / -mvPosition.z); // Size with depth attenuation
+                    gl_PointSize = size * (300.0 / -mvPosition.z); 
                     gl_Position = projectionMatrix * mvPosition;
                 }
             `,
@@ -2424,7 +2048,7 @@
                 varying vec3 vColor;
                 
                 void main() {
-                    gl_FragColor = vec4(vColor, 0.9); // Standard square particle
+                    gl_FragColor = vec4(vColor, 0.9); 
                 }
             `,
             transparent: true,
@@ -2437,11 +2061,11 @@
         scene.add(logoParticles);
     }
 
-    // BROWSER-NATIVE SVG point sampling - 100% accurate!
-    // Let the browser parse SVG, we just sample points from the result
+
+
     function sampleSVGPathUsingBrowser(pathString, densityMultiplier = 1) {
         try {
-            // Create temporary SVG in DOM
+
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.setAttribute('style', 'position:absolute;visibility:hidden;width:0;height:0');
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -2452,8 +2076,8 @@
             const points = [];
             const totalLength = path.getTotalLength();
 
-            // Sample points along the path
-            // Higher density = more points = better accuracy
+
+
             const step = 0.5 / densityMultiplier;
             const numPoints = Math.ceil(totalLength / step);
 
@@ -2467,41 +2091,30 @@
                 });
             }
 
-            // Cleanup
-            document.body.removeChild(svg);
 
-            console.log(`[sampleSVG] Sampled ${points.length} points from browser-rendered path`);
+            document.body.removeChild(svg);
             return points;
         } catch (error) {
-            console.error('[sampleSVG] Error:', error);
             return [];
         }
     }
 
-    // Generate target positions for icon shapes
+
     function generateIconTargets() {
         Object.keys(iconPaths).forEach(iconName => {
             const pathString = iconPaths[iconName];
 
-            // Use BROWSER to parse SVG instead of manual parsing!
+
             const sampledShape = sampleSVGPathUsingBrowser(pathString, 3);
 
 
 
             if (sampledShape.length === 0) {
-                console.warn(`[${iconName}] No points parsed!`);
                 return;
             }
+            const finalShape = sampledShape;
 
-            // DISABLED: Fill causes blob for complex shapes with holes
-            // Use dense outline sampling instead
-            // const filledShape = fillShapeWithParticles(sampledShape, 6);
-            // console.log(`[${iconName}] After fill: ${filledShape.length} points`);
 
-            console.log(`[${iconName}] Using outline only (${sampledShape.length} points)`);
-            const finalShape = sampledShape; // Use outline only
-
-            // Find bounds for centering and scaling
             const xs = finalShape.map(p => p.x);
             const ys = finalShape.map(p => p.y);
             const minX = Math.min(...xs);
@@ -2513,16 +2126,16 @@
 
 
 
-            // Scale to match crab size (~80 units)
+
             const scaleX = 80 / (maxX - minX);
             const scaleY = 80 / (maxY - minY);
             const scale = Math.min(scaleX, scaleY) * 0.8;
 
 
 
-            // Create target positions array with HORIZONTAL FLIP
+
             const targets = finalShape.map(point => ({
-                x: -(point.x - centerX) * scale, // Negate X to flip horizontally
+                x: -(point.x - centerX) * scale,
                 y: (point.y - centerY) * scale,
                 z: 0
             }));
@@ -2532,9 +2145,9 @@
         });
     }
 
-    // Setup hover handlers for social media icons
+
     function setupIconEventListeners() {
-        // Map href patterns to icon names
+
         const iconMap = {
             'github.com': 'github',
             'discord.com': 'discord',
@@ -2542,11 +2155,11 @@
             'wa.me': 'whatsapp'
         };
 
-        // Find all social media links
+
         document.querySelectorAll('a[href]').forEach(link => {
             const href = link.getAttribute('href');
 
-            // Determine icon type from URL
+
             let iconType = null;
             for (const [pattern, name] of Object.entries(iconMap)) {
                 if (href.includes(pattern)) {
@@ -2556,12 +2169,12 @@
             }
 
             if (iconType) {
-                // Hover in - morph to icon
+
                 link.addEventListener('mouseenter', () => {
                     morphToIcon(iconType);
                 });
 
-                // Hover out - morph back to crab
+
                 link.addEventListener('mouseleave', () => {
                     morphToIcon('crab');
                 });
@@ -2571,35 +2184,35 @@
 
 
     function morphToIcon(iconName) {
-        // Allow smooth transition even during active morphing
+
         if (targetMorphState === iconName && morphing) {
-            // Already morphing to this target, don't interrupt
+
             return;
         }
 
-        // If we're currently morphing, capture current actual positions as snapshot
+
         if (morphing && logoParticles) {
             const positions = logoParticles.geometry.attributes.position.array;
             morphSnapshot = [];
 
-            // CRITICAL: Un-rotate positions before storing in snapshot
-            // Snapshot should contain relative positions BEFORE rotation is applied
-            const cos = Math.cos(-crabRotation); // Negative to un-rotate
+
+
+            const cos = Math.cos(-crabRotation);
             const sin = Math.sin(-crabRotation);
 
             for (let i = 0; i < logoParticleData.length; i++) {
                 const i3 = i * 3;
 
-                // Get current world position
+
                 const worldX = positions[i3] - crabPosition.x;
                 const worldY = positions[i3 + 1] - crabPosition.y;
                 const worldZ = positions[i3 + 2] - crabPosition.z;
 
-                // Un-rotate to get relative position
+
                 const relX = worldX * cos - worldY * sin;
                 const relY = worldX * sin + worldY * cos;
 
-                // Capture UN-ROTATED relative position
+
                 morphSnapshot.push({
                     x: relX,
                     y: relY,
@@ -2607,20 +2220,20 @@
                 });
             }
         } else {
-            morphSnapshot = null; // No interruption, clean transition
+            morphSnapshot = null;
         }
 
-        // Generate random explosion parameters for this transition
+
         if (explodeDirection.length !== logoParticleData.length) {
             explodeDirection = [];
             for (let i = 0; i < logoParticleData.length; i++) {
-                // Random 3D direction vector (truly chaotic/scattered)
-                const x = (Math.random() - 0.5) * 2; // -1 to 1
-                const y = (Math.random() - 0.5) * 2; // -1 to 1
-                const z = (Math.random() - 0.5) * 2; // -1 to 1
 
-                // Normalize and scale to random distance
-                const dist = 25 + Math.random() * 35; // 25-60 units away
+                const x = (Math.random() - 0.5) * 2;
+                const y = (Math.random() - 0.5) * 2;
+                const z = (Math.random() - 0.5) * 2;
+
+
+                const dist = 25 + Math.random() * 35;
 
                 explodeDirection.push({
                     x: (x / Math.sqrt(x * x + y * y + z * z)) * dist,
@@ -2630,7 +2243,6 @@
             }
         }
 
-        // Set new target
         targetMorphState = iconName;
         morphing = true;
         morphProgress = 0;
@@ -2638,38 +2250,6 @@
         explodeProgress = 0;
         implodeProgress = 0;
     }
-
-    // function createEnergyLines() {
-    //     const lineCount = 30;
-    //     for (let i = 0; i < lineCount; i++) {
-    //         const geometry = new LineGeometry();
-    //         const points = [];
-    //         const z = (Math.random() - 0.5) * 150 - 75;
-    //         const startX = (Math.random() - 0.5) * 150;
-    //         const startY = (Math.random() - 0.5) * 150;
-    //         const length = Math.random() * 10 + 5;
-
-    //         points.push(startX, startY, z);
-    //         points.push(startX, startY - length, z);
-    //         geometry.setPositions(points);
-
-    //         const material = new LineMaterial({
-    //             color: 0x88aaff,
-    //             linewidth: 0.003,
-    //             transparent: true,
-    //             opacity: 0.5,
-    //             dashed: false,
-    //         });
-
-    //         const line = new Line2(geometry, material);
-
-    //         line.userData.speed = Math.random() * 30 + 15;
-    //         line.userData.originalZ = z;
-
-    //         energyLines.push(line);
-    //         scene.add(line);
-    //     }
-    // }
 
     function onWindowResize() {
         const width = window.innerWidth;
@@ -2708,7 +2288,7 @@
             darkness.style.opacity = Math.min(0.85, scrollPercent * 1.2);
         }
 
-        // Dim the lights as you dive deeper
+
         if (scene.children) {
             scene.children.forEach(child => {
                 if (child.isLight && child.type !== 'AmbientLight') {
@@ -2735,29 +2315,32 @@
         const positions = particles.geometry.attributes.position.array;
         const colors = particles.geometry.attributes.color.array;
         const highlightColor = new THREE.Color(0xffd700);
+        const radiusSq = PUSH_EFFECT.radius * PUSH_EFFECT.radius;
+        const hlR = highlightColor.r;
+        const hlG = highlightColor.g;
+        const hlB = highlightColor.b;
 
         for (let i = 0; i < particleData.length; i++) {
             const i3 = i * 3;
             const data = particleData[i];
 
-            // Simple movement using velocity
+
             data.currentPos.x += data.velocity.x;
             data.currentPos.y += data.velocity.y;
             data.currentPos.z += data.velocity.z;
 
-            // Add subtle wave-like motion for more organic ocean effect
+
             const waveX = Math.sin(elapsedTime * 0.5 + data.originalPos.y * 0.01) * 0.2;
             const waveY = Math.cos(elapsedTime * 0.3 + data.originalPos.x * 0.01) * 0.2;
 
             data.currentPos.x += waveX * delta * 5;
             data.currentPos.y += waveY * delta * 5;
 
-            // PUSH EFFECT: Main particles pushed away by exploding/imploding logo particles
+
             if ((morphPhase === 'explode' || morphPhase === 'implode') && logoParticles) {
                 const logoPositions = logoParticles.geometry.attributes.position.array;
 
-                // Sample logo particles for performance (check every Nth particle)
-                const sampleRate = 20; // Increased from 10 to 20 for better performance
+                const sampleRate = 20;
                 let totalPushX = 0;
                 let totalPushY = 0;
                 let totalPushZ = 0;
@@ -2766,19 +2349,13 @@
                 for (let j = 0; j < logoParticleData.length; j += sampleRate) {
                     const j3 = j * 3;
 
-                    // Get logo particle world position
-                    const logoX = logoPositions[j3];
-                    const logoY = logoPositions[j3 + 1];
-                    const logoZ = logoPositions[j3 + 2];
+                    const dx = data.currentPos.x - logoPositions[j3];
+                    const dy = data.currentPos.y - logoPositions[j3 + 1];
+                    const dz = data.currentPos.z - logoPositions[j3 + 2];
+                    const distSq = dx * dx + dy * dy + dz * dz;
 
-                    // Calculate distance from main particle to logo particle
-                    const dx = data.currentPos.x - logoX;
-                    const dy = data.currentPos.y - logoY;
-                    const dz = data.currentPos.z - logoZ;
-                    const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                    // Push away if close to exploding logo particle
-                    if (dist < PUSH_EFFECT.radius && dist > 0.1) {
+                    if (distSq < radiusSq && distSq > 0.01) {
+                        const dist = Math.sqrt(distSq);
                         const forceMagnitude = PUSH_EFFECT.strength * (1 - dist / PUSH_EFFECT.radius);
                         totalPushX += (dx / dist) * forceMagnitude;
                         totalPushY += (dy / dist) * forceMagnitude;
@@ -2787,7 +2364,6 @@
                     }
                 }
 
-                // Apply cumulative push force
                 if (affected) {
                     data.currentPos.x += totalPushX;
                     data.currentPos.y += totalPushY;
@@ -2795,79 +2371,90 @@
                 }
             }
 
-            // Respawn particle if it goes too far in ANY direction
+
             if (Math.abs(data.currentPos.x) > 150 ||
                 Math.abs(data.currentPos.y) > 150 ||
                 Math.abs(data.currentPos.z) > 150) {
-                // Respawn at random position in 3D space
+
                 data.currentPos.x = (Math.random() - 0.5) * 150;
                 data.currentPos.y = (Math.random() - 0.5) * 150;
                 data.currentPos.z = (Math.random() - 0.5) * 200;
 
-                // Randomize velocity in ALL directions again
+
                 data.velocity.x = (Math.random() - 0.5) * 0.8;
                 data.velocity.y = (Math.random() - 0.5) * 0.8;
                 data.velocity.z = (Math.random() - 0.5) * 0.8;
 
-                // Update original position for wave calculation
+
                 data.originalPos.set(data.currentPos.x, data.currentPos.y, data.currentPos.z);
             }
 
-            // Mouse interaction - repel particles near mouse
-            const mousePos3D = new THREE.Vector3(mouse.x, mouse.y, 0.5);
-            mousePos3D.unproject(camera);
-            const dir = mousePos3D.sub(camera.position).normalize();
-            const distance = -camera.position.z / dir.z;
-            const finalMousePos = camera.position.clone().add(dir.multiplyScalar(distance));
 
-            const diff = new THREE.Vector3().subVectors(data.currentPos, finalMousePos);
-            const dist = diff.length();
-            if (dist < 20) {
-                const force = (1 - (dist / 20)) * 0.2;
-                diff.normalize();
-                data.currentPos.add(diff.multiplyScalar(force));
+            const mDx = data.currentPos.x - finalMousePos.x;
+            const mDy = data.currentPos.y - finalMousePos.y;
+            const mDz = data.currentPos.z - finalMousePos.z;
+            const mDistSq = mDx * mDx + mDy * mDy + mDz * mDz;
+            let mDist = 1000;
+
+            if (mDistSq < 400) {
+                mDist = Math.sqrt(mDistSq);
+                if (mDist > 0.01) {
+                    const force = (1 - (mDist / 20)) * 0.2;
+                    data.currentPos.x += (mDx / mDist) * force;
+                    data.currentPos.y += (mDy / mDist) * force;
+                    data.currentPos.z += (mDz / mDist) * force;
+                }
             }
 
-            // Update positions
+
             positions[i3] = data.currentPos.x;
             positions[i3 + 1] = data.currentPos.y;
             positions[i3 + 2] = data.currentPos.z;
 
-            // Color based on distance (closer particles are brighter)
-            const depthFactor = Math.max(0, Math.min(1, (data.currentPos.z + 250) / 300));
-            const color = new THREE.Color(0x001f3f).lerp(new THREE.Color(0x4a9eff), depthFactor * 0.8);
 
-            // Add mouse highlight
-            let colorMix = dist < 20 ? (1 - dist / 20) : 0;
-            const finalColor = color.lerp(highlightColor, colorMix * 0.5);
-            finalColor.toArray(colors, i3);
+            const depthFactor = Math.max(0, Math.min(1, (data.currentPos.z + 250) / 300)) * 0.8;
+            let r = 0.0 + (0.290 - 0.0) * depthFactor;
+            let g = 0.121 + (0.620 - 0.121) * depthFactor;
+            let b = 0.247 + (1.0 - 0.247) * depthFactor;
+
+            let colorMix = mDist < 20 ? (1 - mDist / 20) : 0;
+            if (colorMix > 0) {
+                const mix = colorMix * 0.5;
+                r = r + (hlR - r) * mix;
+                g = g + (hlG - g) * mix;
+                b = b + (hlB - b) * mix;
+            }
+
+            colors[i3] = r;
+            colors[i3 + 1] = g;
+            colors[i3 + 2] = b;
         }
         particles.geometry.attributes.position.needsUpdate = true;
         particles.geometry.attributes.color.needsUpdate = true;
 
-        // Update morphing animation progress with TWO-PHASE system
+
         if (morphing) {
             if (morphPhase === 'explode') {
-                // EXPLODE PHASE: Particles burst outward with ease out
-                explodeProgress += 0.03; // ~17 frames (~0.3 seconds)
+
+                explodeProgress += 0.03;
                 if (explodeProgress >= 1) {
                     explodeProgress = 1;
-                    morphPhase = 'implode'; // Switch to implosion phase
+                    morphPhase = 'implode';
                 }
             } else if (morphPhase === 'implode') {
-                // IMPLODE PHASE: Particles converge to target with ease in
-                implodeProgress += 0.026; // ~25 frames (~0.4 seconds)
+
+                implodeProgress += 0.026;
                 if (implodeProgress >= 1) {
                     implodeProgress = 1;
                     morphing = false;
-                    morphState = targetMorphState; // Update current state
-                    morphSnapshot = null; // Clear snapshot for next clean transition
+                    morphState = targetMorphState;
+                    morphSnapshot = null;
                     morphPhase = 'none';
                 }
             }
         }
 
-        // Easing functions
+
         const easeOutExpo = (t) => {
             return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
         };
@@ -2882,19 +2469,19 @@
                 : 1 - Math.pow(-2 * t + 2, 3) / 2;
         };
 
-        const easedProgress = easeInOutCubic(morphProgress); // Legacy, kept for compatibility
+        const easedProgress = easeInOutCubic(morphProgress);
 
-        // Crab animation - random movement with limited rotation
+
         if (logoParticles) {
             const logoPositions = logoParticles.geometry.attributes.position.array;
 
-            // Update crab position with velocity
+
             crabPosition.x += crabVelocity.x;
             crabPosition.y += crabVelocity.y;
 
-            // Bounce off screen boundaries - FULL VIEWPORT
-            const boundX = 60; // Increased for wider screens
-            const boundY = 40; // Increased for taller screens
+
+            const boundX = 60;
+            const boundY = 40;
             if (Math.abs(crabPosition.x) > boundX) {
                 crabVelocity.x *= -1;
             }
@@ -2902,12 +2489,12 @@
                 crabVelocity.y *= -1;
             }
 
-            // Randomly change direction occasionally
-            if (Math.random() < 0.01) { // 1% chance per frame
+
+            if (Math.random() < 0.01) {
                 crabVelocity.x += (Math.random() - 0.5) * 0.02;
                 crabVelocity.y += (Math.random() - 0.5) * 0.02;
 
-                // Clamp velocity
+
                 const maxSpeed = 0.15;
                 const speed = Math.sqrt(crabVelocity.x ** 2 + crabVelocity.y ** 2);
                 if (speed > maxSpeed) {
@@ -2920,29 +2507,24 @@
             const swayRotation = Math.sin(elapsedTime * 0.3) * (Math.PI / 6);
             crabRotation = baseRotation + swayRotation;
 
-            // DEBUG: Log rotation during morphing
-            if (morphing && Math.random() < 0.01) { // Log occasionally to avoid spam
-                console.log(`[ROTATION DEBUG] morphState: ${morphState}, targetMorphState: ${targetMorphState}, crabRotation: ${(crabRotation * 180 / Math.PI).toFixed(1)}°, morphProgress: ${(morphProgress * 100).toFixed(0)}%`);
-            }
-
             for (let i = 0; i < logoParticleData.length; i++) {
                 const i3 = i * 3;
                 const data = logoParticleData[i];
 
                 let basePos;
 
-                // CRITICAL FIX: During morphing, lock basePos to the SOURCE state
-                // Don't let morphState changes affect basePos mid-transition
+
+
                 if (morphing) {
-                    // Use morphSnapshot if available (interrupted morph)
+
                     if (morphSnapshot && morphSnapshot[i]) {
                         basePos = morphSnapshot[i];
                     } else {
-                        // Determine what state we're morphing FROM
-                        // If targetMorphState is crab, we're morphing FROM icon TO crab
-                        // If targetMorphState is icon, we're morphing FROM crab TO icon
+
+
+
                         if (targetMorphState === 'crab') {
-                            // Morphing back to crab FROM icon
+
                             const iconTargets = iconTargetPositions[morphState];
                             if (iconTargets) {
                                 const targetIndex = i % iconTargets.length;
@@ -2951,12 +2533,12 @@
                                 basePos = data.relativePos;
                             }
                         } else {
-                            // Morphing from crab TO icon
-                            basePos = data.relativePos; // Always use crab position as source
+
+                            basePos = data.relativePos;
                         }
                     }
                 } else {
-                    // Not morphing - use current state normally
+
                     if (morphState === 'crab') {
                         basePos = data.relativePos;
                     } else {
@@ -2970,7 +2552,9 @@
                     }
                 }
 
-                let morphedPos = { ...basePos };
+                let morphX = basePos.x;
+                let morphY = basePos.y;
+                let morphZ = basePos.z;
                 if (morphing) {
                     let targetPos;
                     if (targetMorphState === 'crab') {
@@ -2985,59 +2569,51 @@
                         }
                     }
 
-                    // TWO-PHASE MORPHING SYSTEM
+
                     if (morphPhase === 'explode') {
-                        // EXPLODE PHASE: Particles burst outward in random 3D directions
+
                         const easedExplode = easeOutExpo(explodeProgress);
                         const dir = explodeDirection[i] || { x: 30, y: 30, z: 15 };
 
-                        // Calculate exploded position from basePos using random direction
-                        morphedPos = {
-                            x: basePos.x + dir.x * easedExplode,
-                            y: basePos.y + dir.y * easedExplode,
-                            z: basePos.z + dir.z * easedExplode
-                        };
 
-                        // Add extra chaotic jitter during explosion
+                        morphX = basePos.x + dir.x * easedExplode;
+                        morphY = basePos.y + dir.y * easedExplode;
+                        morphZ = basePos.z + dir.z * easedExplode;
+
+
                         if (explodeProgress < 0.7) {
                             const jitterIntensity = (1 - explodeProgress) * 3;
-                            morphedPos.x += (Math.random() - 0.5) * jitterIntensity;
-                            morphedPos.y += (Math.random() - 0.5) * jitterIntensity;
-                            morphedPos.z += (Math.random() - 0.5) * jitterIntensity;
+                            morphX += (Math.random() - 0.5) * jitterIntensity;
+                            morphY += (Math.random() - 0.5) * jitterIntensity;
+                            morphZ += (Math.random() - 0.5) * jitterIntensity;
                         }
                     } else if (morphPhase === 'implode') {
-                        // IMPLODE PHASE: Particles converge from scattered positions to target
+
                         const easedImplode = easeInExpo(implodeProgress);
                         const dir = explodeDirection[i] || { x: 30, y: 30, z: 15 };
 
-                        // Start from fully exploded position
-                        const explodedPos = {
-                            x: basePos.x + dir.x,
-                            y: basePos.y + dir.y,
-                            z: basePos.z + dir.z
-                        };
 
-                        // Interpolate from scattered exploded position to target
-                        morphedPos = {
-                            x: explodedPos.x + (targetPos.x - explodedPos.x) * easedImplode,
-                            y: explodedPos.y + (targetPos.y - explodedPos.y) * easedImplode,
-                            z: explodedPos.z + (targetPos.z - explodedPos.z) * easedImplode
-                        };
+                        const expX = basePos.x + dir.x;
+                        const expY = basePos.y + dir.y;
+                        const expZ = basePos.z + dir.z;
+
+
+                        morphX = expX + (targetPos.x - expX) * easedImplode;
+                        morphY = expY + (targetPos.y - expY) * easedImplode;
+                        morphZ = expZ + (targetPos.z - expZ) * easedImplode;
                     } else {
-                        // Fallback to legacy smooth transition
-                        morphedPos = {
-                            x: basePos.x + (targetPos.x - basePos.x) * easedProgress,
-                            y: basePos.y + (targetPos.y - basePos.y) * easedProgress,
-                            z: basePos.z + (targetPos.z - basePos.z) * easedProgress
-                        };
+
+                        morphX = basePos.x + (targetPos.x - basePos.x) * easedProgress;
+                        morphY = basePos.y + (targetPos.y - basePos.y) * easedProgress;
+                        morphZ = basePos.z + (targetPos.z - basePos.z) * easedProgress;
                     }
                 }
                 const jitterAmount = 0.3;
                 const jitterX = Math.sin(elapsedTime * 2 + i * 0.5) * jitterAmount;
                 const jitterY = Math.cos(elapsedTime * 1.7 + i * 0.3) * jitterAmount;
 
-                const jitteredX = morphedPos.x + jitterX;
-                const jitteredY = morphedPos.y + jitterY;
+                const jitteredX = morphX + jitterX;
+                const jitteredY = morphY + jitterY;
 
                 const cos = Math.cos(crabRotation);
                 const sin = Math.sin(crabRotation);
@@ -3065,7 +2641,7 @@
                 logoPositions[i3 + 1] = finalY;
                 logoPositions[i3 + 2] = worldZ;
 
-                // COLOR MORPHING based on icon state
+
                 const logoColors = logoParticles.geometry.attributes.color.array;
                 const crabColor = iconColors.crab;
                 let targetColor;
@@ -3073,7 +2649,7 @@
                 if (morphState !== 'crab' && iconColors[morphState]) {
                     const stateColor = iconColors[morphState];
                     if (Array.isArray(stateColor)) {
-                        // Gmail multicolor - cycle through colors based on particle index
+
                         targetColor = stateColor[i % stateColor.length];
                     } else {
                         targetColor = stateColor;
@@ -3082,17 +2658,11 @@
                     targetColor = crabColor;
                 }
 
-                // Lerp colors during morphing
-                const currentColor = new THREE.Color(
-                    logoColors[i3],
-                    logoColors[i3 + 1],
-                    logoColors[i3 + 2]
-                );
-                const lerpedColor = currentColor.lerp(targetColor, morphing ? 0.1 : 0.05);
 
-                logoColors[i3] = lerpedColor.r;
-                logoColors[i3 + 1] = lerpedColor.g;
-                logoColors[i3 + 2] = lerpedColor.b;
+                const lerpFactor = morphing ? 0.1 : 0.05;
+                logoColors[i3] += (targetColor.r - logoColors[i3]) * lerpFactor;
+                logoColors[i3 + 1] += (targetColor.g - logoColors[i3 + 1]) * lerpFactor;
+                logoColors[i3 + 2] += (targetColor.b - logoColors[i3 + 2]) * lerpFactor;
             }
 
             logoParticles.geometry.attributes.position.needsUpdate = true;
@@ -3112,13 +2682,13 @@
     init();
     animate();
 
-    // Floating Navigation Box Control
+
     const floatingNav = document.getElementById('floating-nav');
     const aboutMeSection = document.querySelector('.snap-section:nth-child(2)');
     const fabButtons = document.querySelectorAll('.fab-icon-button');
     const fabHighlight = document.getElementById('fab-highlight');
 
-    // Intersection Observer for About Me section
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -3135,114 +2705,94 @@
         observer.observe(aboutMeSection);
     }
 
-    // Click handler with animated highlight
     fabButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
+
             fabButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
+
             button.classList.add('active');
 
-            // Animate highlight to button position
-            // Each button is 48px + 12px gap
+
+
             const offset = index * (48 + 12);
             fabHighlight.style.transform = `translateY(${offset}px)`;
         });
     });
 
-    // Initialize highlight position
     fabHighlight.style.transform = 'translateY(0px)';
 
-    // Inline Navigation Box Control (inside Technical Skills)
     const inlineFabButtons = document.querySelectorAll('.inline-nav-box .fab-icon-button');
     const inlineFabHighlight = document.getElementById('inline-fab-highlight');
-
-    // Category names for filtering
     const categories = ['web', 'mobile', 'desktop', 'game', 'else'];
 
-    // Click handler with animated highlight for inline nav - INCLUDING CATEGORY FILTERING
     if (inlineFabButtons.length > 0 && inlineFabHighlight) {
         inlineFabButtons.forEach((button, index) => {
             button.addEventListener('click', () => {
-                // Update active state for buttons
+
                 inlineFabButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                // Animate highlight to button position
                 const offset = index * (48 + 12);
                 inlineFabHighlight.style.transform = `translateY(${offset}px)`;
 
-                // Filter skill cards based on category
                 const selectedCategory = categories[index];
                 filterSkillCards(selectedCategory);
             });
         });
 
-        // Initialize inline highlight position
         inlineFabHighlight.style.transform = 'translateY(0px)';
     }
 
-    // Function to filter skill cards with animations
     function filterSkillCards(category) {
         const skillCards = document.querySelectorAll('.skill-card');
 
-        // Remove all floating animation classes from all cards first
         skillCards.forEach(card => {
             card.classList.remove('float-1', 'float-2', 'float-3', 'float-4', 'float-5', 'float-6', 'float-7', 'float-8');
         });
 
-        // Force reflow to reset animations
         void document.body.offsetWidth;
 
-        // Show matching cards with random speed animation
         skillCards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
 
             if (cardCategory === category) {
-                // Remove hidden class and add visible
+
                 card.classList.remove('hidden');
                 card.classList.add('visible');
 
-                // Set random animation duration between 0.3s and 0.7s for entrance
                 const randomDuration = 0.3 + Math.random() * 0.4;
                 card.style.animationDuration = `${randomDuration}s`;
-                card.style.animationDelay = '0ms'; // No delay - all cards appear together
+                card.style.animationDelay = '0ms';
 
-                // After entrance animation completes, simply switch to floating animation
-                // Calculate wait time based on randomDuration (0.3-0.7s) + small buffer
                 const waitTime = randomDuration * 1000 + 100;
                 setTimeout(() => {
-                    // Remove entrance class and inline styles
+
                     card.classList.remove('visible');
                     card.style.removeProperty('animation-duration');
-                    
-                    // Force reflow
+
                     void card.offsetWidth;
-                    
-                    // Simply add floating class - CSS will handle starting from Y=0
+
                     const randomFloat = 'float-' + (Math.floor(Math.random() * 8) + 1);
                     card.classList.add(randomFloat);
                 }, waitTime);
             } else {
-                // Hide card
+
                 card.classList.remove('visible');
                 card.classList.add('hidden');
-                card.style.animationDuration = '0.3s'; // Fast exit animation
+                card.style.animationDuration = '0.3s';
                 card.style.animationDelay = '0ms';
             }
         });
     }
-    // Initialize: show 'web' category by default
+
     filterSkillCards('web');
 
-    // Bottom Floating Navigation Control
     const bottomNav = document.getElementById('bottom-nav');
     const diveDeeperSection = document.querySelector('.snap-section:nth-child(4)');
     const bottomNavIcons = document.querySelectorAll('.bottom-nav-icon');
 
-    // Add click event listeners to each floating button for section navigation
     if (bottomNavIcons.length >= 3) {
-        // Button 1 (Building icon) → Home section (1st section)
+
         bottomNavIcons[0].addEventListener('click', () => {
             const homeSection = document.querySelector('.snap-section:nth-child(1)');
             if (homeSection) {
@@ -3250,7 +2800,7 @@
             }
         });
 
-        // Button 2 (Desktop icon) → Work Experience section (3rd section)
+
         bottomNavIcons[1].addEventListener('click', () => {
             const aboutMeSection = document.querySelector('.snap-section:nth-child(2)');
             if (aboutMeSection) {
@@ -3258,7 +2808,7 @@
             }
         });
 
-        // Button 3 (Laptop/Tech icon) → Work Experience section (4th section)
+
         bottomNavIcons[2].addEventListener('click', () => {
             const workExperienceSection = document.querySelector('.snap-section:nth-child(3)');
             if (workExperienceSection) {
@@ -3267,17 +2817,16 @@
         });
     }
 
-    // Hide navigation only in Dive Deeper section, visible everywhere else
     if (bottomNav && diveDeeperSection) {
-        // Observer for Dive Deeper - hide when visible, show when not visible
+
         const diveDeeperObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Slide out from current float position using Web Animations API
+
                     const icons = bottomNav.querySelectorAll('.bottom-nav-icon');
                     icons.forEach((icon, index) => {
                         setTimeout(() => {
-                            // Animate translateX on top of existing float (composite: 'add')
+
                             icon.animate([
                                 { transform: 'translateX(0px)', offset: 0 },
                                 { transform: 'translateX(30px)', offset: 1 }
@@ -3287,7 +2836,7 @@
                                 fill: 'forwards',
                                 composite: 'add'
                             });
-                            // Separate opacity animation (replace mode)
+
                             icon.animate([
                                 { opacity: 1, offset: 0 },
                                 { opacity: 0, offset: 1 }
@@ -3298,12 +2847,12 @@
                             });
                         }, index * 80);
                     });
-                    // Add nav-hidden after all animations complete
+
                     setTimeout(() => {
                         bottomNav.classList.add('nav-hidden');
                     }, icons.length * 80 + 400);
                 } else {
-                    // Show bottom nav - cancel JS animations and remove nav-hidden
+
                     const icons = bottomNav.querySelectorAll('.bottom-nav-icon');
                     icons.forEach(icon => {
                         icon.getAnimations().forEach(anim => {
@@ -3316,13 +2865,12 @@
                 }
             });
         }, {
-            threshold: 0.3 // Hide when 30% of Dive Deeper is visible
+            threshold: 0.3
         });
 
         diveDeeperObserver.observe(diveDeeperSection);
     }
 
-    // Video Carousel Functionality
     let currentSlide = 0;
     const carousel = document.getElementById('videoCarousel');
     const dots = document.querySelectorAll('.carousel-dot');
@@ -3346,7 +2894,7 @@
             dot.classList.toggle('active', index === currentSlide);
         });
 
-        // Play/pause videos based on active slide
+
         const videos = document.querySelectorAll('.video-slide video');
         videos.forEach((video, index) => {
             if (index === currentSlide) {
@@ -3357,6 +2905,5 @@
         });
     }
 
-    // Initialize: play first video
     updateCarousel();
 </script>
