@@ -3071,111 +3071,98 @@
     const fabButtons = document.querySelectorAll('.fab-icon-button');
     const fabHighlight = document.getElementById('fab-highlight');
 
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                floatingNav.classList.add('visible');
-            } else {
-                floatingNav.classList.remove('visible');
-            }
-        });
-    }, {
-        threshold: 0.3
-    });
-
-    if (aboutMeSection) {
+    if (floatingNav && aboutMeSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    floatingNav.classList.add('visible');
+                } else {
+                    floatingNav.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.3 });
         observer.observe(aboutMeSection);
     }
 
     fabButtons.forEach((button, index) => {
+        if (button.closest('.inline-nav-box')) return;
         button.addEventListener('click', () => {
-
             fabButtons.forEach(btn => btn.classList.remove('active'));
-
             button.classList.add('active');
-
-
-
-            const offset = index * (48 + 12);
-            fabHighlight.style.transform = `translateY(${offset}px)`;
+            if (fabHighlight) {
+                const offset = index * (48 + 12);
+                fabHighlight.style.transform = `translateY(${offset}px)`;
+            }
         });
     });
 
-    fabHighlight.style.transform = 'translateY(0px)';
+    if (fabHighlight) {
+        fabHighlight.style.transform = 'translateY(0px)';
+    }
 
     const inlineNavBoxes = document.querySelectorAll('.inline-nav-box');
     const categories = ['web', 'mobile', 'desktop', 'game', 'else'];
+
+    function filterSkillCards(category) {
+        const desktopContainer = document.getElementById('skills-container');
+        const mobileContainer = document.getElementById('skills-container-mobile');
+
+        [desktopContainer, mobileContainer].forEach(container => {
+            if (!container) return;
+            const skillCards = container.querySelectorAll('.skill-card');
+            skillCards.forEach(card => {
+                card.classList.remove('float-1', 'float-2', 'float-3', 'float-4', 'float-5', 'float-6', 'float-7', 'float-8');
+            });
+            void container.offsetWidth;
+            skillCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (cardCategory === category) {
+                    card.classList.remove('hidden');
+                    card.classList.add('visible');
+                    const randomDuration = 0.3 + Math.random() * 0.4;
+                    card.style.animationDuration = `${randomDuration}s`;
+                    card.style.animationDelay = '0ms';
+                    const waitTime = randomDuration * 1000 + 100;
+                    setTimeout(() => {
+                        card.classList.remove('visible');
+                        card.style.removeProperty('animation-duration');
+                        void card.offsetWidth;
+                        const randomFloat = 'float-' + (Math.floor(Math.random() * 8) + 1);
+                        card.classList.add(randomFloat);
+                    }, waitTime);
+                } else {
+                    card.classList.remove('visible');
+                    card.classList.add('hidden');
+                    card.style.animationDuration = '0.3s';
+                    card.style.animationDelay = '0ms';
+                }
+            });
+        });
+    }
 
     if (inlineNavBoxes.length > 0) {
         inlineNavBoxes.forEach(navBox => {
             const buttons = navBox.querySelectorAll('.fab-icon-button');
             const highlight = navBox.querySelector('.fab-highlight');
 
-            buttons.forEach((button, index) => {
+            buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const btnIndex = parseInt(button.getAttribute('data-index'), 10) || index;
+                    const dataIndex = button.getAttribute('data-index');
+                    const btnIndex = dataIndex !== null ? parseInt(dataIndex, 10) : 0;
 
-
-                    const allMatchingButtons = document.querySelectorAll(`.inline-nav-box .fab-icon-button[data-index="${btnIndex}"]`);
                     document.querySelectorAll('.inline-nav-box .fab-icon-button').forEach(btn => btn.classList.remove('active'));
-                    allMatchingButtons.forEach(btn => btn.classList.add('active'));
-
+                    document.querySelectorAll(`.inline-nav-box .fab-icon-button[data-index="${btnIndex}"]`).forEach(btn => btn.classList.add('active'));
 
                     document.querySelectorAll('.inline-nav-box .fab-highlight').forEach(hl => {
-                        const offset = btnIndex * (48 + 12);
-                        hl.style.transform = `translateY(${offset}px)`;
+                        hl.style.transform = `translateY(${btnIndex * (48 + 12)}px)`;
                     });
 
-                    const selectedCategory = categories[btnIndex];
-                    filterSkillCards(selectedCategory);
+                    filterSkillCards(categories[btnIndex]);
                 });
             });
 
             if (highlight) {
                 highlight.style.transform = 'translateY(0px)';
-            }
-        });
-    }
-
-    function filterSkillCards(category) {
-        const skillCards = document.querySelectorAll('.skill-card');
-
-        skillCards.forEach(card => {
-            card.classList.remove('float-1', 'float-2', 'float-3', 'float-4', 'float-5', 'float-6', 'float-7', 'float-8');
-        });
-
-        void document.body.offsetWidth;
-
-        skillCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-
-            if (cardCategory === category) {
-
-                card.classList.remove('hidden');
-                card.classList.add('visible');
-
-                const randomDuration = 0.3 + Math.random() * 0.4;
-                card.style.animationDuration = `${randomDuration}s`;
-                card.style.animationDelay = '0ms';
-
-                const waitTime = randomDuration * 1000 + 100;
-                setTimeout(() => {
-
-                    card.classList.remove('visible');
-                    card.style.removeProperty('animation-duration');
-
-                    void card.offsetWidth;
-
-                    const randomFloat = 'float-' + (Math.floor(Math.random() * 8) + 1);
-                    card.classList.add(randomFloat);
-                }, waitTime);
-            } else {
-
-                card.classList.remove('visible');
-                card.classList.add('hidden');
-                card.style.animationDuration = '0.3s';
-                card.style.animationDelay = '0ms';
             }
         });
     }
